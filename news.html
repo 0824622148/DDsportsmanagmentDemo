@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="D.D Sports Management Agency news — transfers, announcements, events and football updates." />
+  <title>News & Updates — D.D Sports Management Agency</title>
+
+  <link rel="icon" type="image/jpeg" href="assets/logo/dd-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <style>
+    /* Category filter JS */
+    .news-card[data-hidden="true"] { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/logo/dd-logo.jpg" alt="D.D Sports Management Logo" />
+        <div class="navbar-logo-text">
+          <span class="navbar-logo-name">D.D Sports</span>
+          <span class="navbar-logo-tagline">Confía en tu Destino</span>
+        </div>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="players.html">Players</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar-cta">
+        <a href="contact.html" class="btn btn-primary btn-sm">Get Signed</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary btn-lg">Get Signed</a>
+    <div class="mobile-nav-social">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <header class="page-hero" style="padding-top:var(--nav-height);">
+    <div class="page-hero-bg" style="background-image:url('assets/players/player-11.jpg');"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p class="page-hero-eyebrow">Stay Updated</p>
+        <h1 class="page-hero-title">News & <span>Updates</span></h1>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+          <span>News</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- FEATURED ARTICLE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Latest Story</span>
+        <h2 class="section-title">Featured <span class="text-gold">Story</span></h2>
+        <div class="section-bar"></div>
+      </div>
+
+      <div class="news-featured" data-aos="fade-up" data-aos-delay="150">
+        <div class="news-featured-img">
+          <img src="assets/players/player-22.jpg" alt="Featured news" loading="lazy" />
+          <div style="position:absolute;top:var(--space-6);left:var(--space-6);z-index:2;">
+            <span class="badge badge-gold">Transfer</span>
+          </div>
+        </div>
+        <div class="news-featured-body">
+          <p style="font-size:var(--text-xs);color:var(--gray-400);letter-spacing:var(--tracking-wide);text-transform:uppercase;">
+            <i class="fa-regular fa-calendar"></i> April 13, 2026
+          </p>
+          <h2 class="news-featured-title">High-Profile Transfer Secured — Another D.D Sports Success Story</h2>
+          <p class="news-featured-excerpt">
+            D.D Sports Management Agency has once again delivered for one of its elite clients, completing a landmark transfer deal that sees the player join a top-tier club. The deal, negotiated over several weeks, represents a significant step forward in the player's career and underlines the agency's standing in global football circles.
+          </p>
+          <a href="#" class="btn btn-primary">
+            Read Full Story <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- NEWS GRID -->
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="section-header flex-between" style="flex-wrap:wrap;gap:var(--space-4);" data-aos="fade-up">
+        <div>
+          <span class="section-eyebrow">All Stories</span>
+          <h2 class="section-title">Latest <span class="text-gold">News</span></h2>
+          <div class="section-bar"></div>
+        </div>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="category-filter" data-aos="fade-up" data-aos-delay="100">
+        <button class="category-btn active" data-cat="all">All</button>
+        <button class="category-btn" data-cat="transfer">Transfers</button>
+        <button class="category-btn" data-cat="announcement">Announcements</button>
+        <button class="category-btn" data-cat="scouting">Scouting</button>
+        <button class="category-btn" data-cat="event">Events</button>
+      </div>
+
+      <div class="news-grid" id="news-grid">
+
+        <article class="news-card" data-category="transfer" data-aos="fade-up" data-aos-delay="0">
+          <div class="news-card-img">
+            <img src="assets/players/player-01.jpg" alt="Transfer news" loading="lazy" />
+            <div class="news-card-tag"><span class="badge badge-gold">Transfer</span></div>
+          </div>
+          <div class="news-card-body">
+            <p class="news-card-date"><i class="fa-regular fa-calendar"></i> April 2026</p>
+            <h3 class="news-card-title">New Signing Confirmed — Midfield Reinforcement</h3>
+            <p class="news-card-excerpt">D.D Sports Management Agency completes another successful transfer deal, placing a top-tier midfielder with a premier club in the league.</p>
+          </div>
+          <div class="news-card-footer">
+            <a href="#" class="news-card-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <span style="font-size:var(--text-xs);color:var(--gray-600);">3 min read</span>
+          </div>
+        </article>
+
+        <article class="news-card" data-category="scouting" data-aos="fade-up" data-aos-delay="100">
+          <div class="news-card-img">
+            <img src="assets/players/player-05.jpg" alt="Scouting" loading="lazy" />
+            <div class="news-card-tag"><span class="badge badge-navy">Scouting</span></div>
+          </div>
+          <div class="news-card-body">
+            <p class="news-card-date"><i class="fa-regular fa-calendar"></i> March 2026</p>
+            <h3 class="news-card-title">Regional Scouting Drive Uncovers New Talent</h3>
+            <p class="news-card-excerpt">Our scouting team has identified promising new talent from the latest regional tournaments across Southern Africa.</p>
+          </div>
+          <div class="news-card-footer">
+            <a href="#" class="news-card-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <span style="font-size:var(--text-xs);color:var(--gray-600);">4 min read</span>
+          </div>
+        </article>
+
+        <article class="news-card" data-category="announcement" data-aos="fade-up" data-aos-delay="200">
+          <div class="news-card-img">
+            <img src="assets/players/player-27.jpg" alt="Announcement" loading="lazy" />
+            <div class="news-card-tag"><span class="badge badge-outline">Announcement</span></div>
+          </div>
+          <div class="news-card-body">
+            <p class="news-card-date"><i class="fa-regular fa-calendar"></i> February 2026</p>
+            <h3 class="news-card-title">Agency Expands European Network</h3>
+            <p class="news-card-excerpt">D.D Sports Management strengthens its European partnerships, opening new pathways for African players into top European leagues.</p>
+          </div>
+          <div class="news-card-footer">
+            <a href="#" class="news-card-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <span style="font-size:var(--text-xs);color:var(--gray-600);">2 min read</span>
+          </div>
+        </article>
+
+        <article class="news-card" data-category="transfer" data-aos="fade-up" data-aos-delay="0">
+          <div class="news-card-img">
+            <img src="assets/players/player-14.jpg" alt="Transfer" loading="lazy" />
+            <div class="news-card-tag"><span class="badge badge-gold">Transfer</span></div>
+          </div>
+          <div class="news-card-body">
+            <p class="news-card-date"><i class="fa-regular fa-calendar"></i> January 2026</p>
+            <h3 class="news-card-title">Defender Completes Move to Top-Flight Club</h3>
+            <p class="news-card-excerpt">One of our represented defenders has secured a dream move to a top-flight club following months of careful negotiations.</p>
+          </div>
+          <div class="news-card-footer">
+            <a href="#" class="news-card-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <span style="font-size:var(--text-xs);color:var(--gray-600);">3 min read</span>
+          </div>
+        </article>
+
+        <article class="news-card" data-category="event" data-aos="fade-up" data-aos-delay="100">
+          <div class="news-card-img">
+            <img src="assets/players/player-27.jpg" alt="Event" loading="lazy" style="object-position:center 40%;" />
+            <div class="news-card-tag"><span class="badge" style="background:var(--navy-600);color:var(--white);">Event</span></div>
+          </div>
+          <div class="news-card-body">
+            <p class="news-card-date"><i class="fa-regular fa-calendar"></i> December 2025</p>
+            <h3 class="news-card-title">Annual Player Networking Event — Recap</h3>
+            <p class="news-card-excerpt">Our annual networking event brought together players, clubs, scouts, and sponsors for a high-energy evening of connections and opportunity.</p>
+          </div>
+          <div class="news-card-footer">
+            <a href="#" class="news-card-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <span style="font-size:var(--text-xs);color:var(--gray-600);">5 min read</span>
+          </div>
+        </article>
+
+        <article class="news-card" data-category="announcement" data-aos="fade-up" data-aos-delay="200">
+          <div class="news-card-img">
+            <img src="assets/players/player-17.jpg" alt="Announcement" loading="lazy" />
+            <div class="news-card-tag"><span class="badge badge-outline">Announcement</span></div>
+          </div>
+          <div class="news-card-body">
+            <p class="news-card-date"><i class="fa-regular fa-calendar"></i> November 2025</p>
+            <h3 class="news-card-title">D.D Sports Welcomes Three New Players to the Roster</h3>
+            <p class="news-card-excerpt">We are pleased to announce the addition of three highly-rated players to the D.D Sports Management roster for the 2025/26 season.</p>
+          </div>
+          <div class="news-card-footer">
+            <a href="#" class="news-card-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <span style="font-size:var(--text-xs);color:var(--gray-600);">2 min read</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- NEWSLETTER -->
+  <section class="section-sm">
+    <div class="container" style="max-width:640px;text-align:center;" data-aos="fade-up">
+      <span class="section-eyebrow">Stay in the Loop</span>
+      <h2 class="section-title" style="font-size:clamp(var(--text-3xl),4vw,var(--text-5xl));">Get Transfer <span class="text-gold">Alerts</span></h2>
+      <div class="section-bar center"></div>
+      <p class="section-subtitle" style="margin:0 auto var(--space-8);">Subscribe for the latest transfers, signings, and football news from D.D Sports Management Agency.</p>
+      <form class="newsletter-form" role="form" aria-label="Newsletter subscription">
+        <input type="email" placeholder="Your email address" aria-label="Email address" required />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <img class="footer-brand-logo" src="assets/logo/dd-logo.jpg" alt="D.D Sports Management" />
+          <p class="footer-brand-tagline">Confía en tu Destino</p>
+          <p class="footer-brand-text">FIFA Licensed football agency representing elite players and coaches globally.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="#">Transfers</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">Scouting</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Contact</h4>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>info@ddsports.com</span></div>
+          <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp Available</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-certificate"></i><span>FIFA Licensed Agent</span></div>
+        </div>
+      </div>
+      <div class="divider-gold"></div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 <span>D.D Sports Management Agency</span>. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // News category filter
+    document.addEventListener('DOMContentLoaded', () => {
+      const catBtns = document.querySelectorAll('.category-btn');
+      const cards   = document.querySelectorAll('#news-grid .news-card');
+
+      catBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          catBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const cat = btn.dataset.cat;
+          cards.forEach(card => {
+            if (cat === 'all' || card.dataset.category === cat) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

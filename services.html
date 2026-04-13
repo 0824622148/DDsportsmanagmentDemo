@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="D.D Sports Management Agency services — player representation, contract negotiation, scouting, and career management." />
+  <title>Services — D.D Sports Management Agency</title>
+
+  <link rel="icon" type="image/jpeg" href="assets/logo/dd-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <style>
+    .service-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+      padding: var(--space-16) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .service-detail:last-of-type { border-bottom: none; }
+    .service-detail.reverse { direction: rtl; }
+    .service-detail.reverse > * { direction: ltr; }
+    @media (max-width: 900px) {
+      .service-detail { grid-template-columns: 1fr; }
+      .service-detail.reverse { direction: ltr; }
+    }
+    .service-detail-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gold-subtle);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--gold-500);
+      margin-bottom: var(--space-6);
+      border: 1px solid rgba(201,162,39,0.2);
+    }
+    .service-detail-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+    }
+    .service-detail-list li {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--gray-200);
+    }
+    .service-detail-list li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      background: var(--gold-500);
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
+    }
+    .service-visual {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .service-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+    }
+    .service-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,42,107,0.3), transparent);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+    @media (max-width: 768px) { .why-grid { grid-template-columns: 1fr; } }
+    .why-card {
+      padding: var(--space-8);
+      background: var(--navy-800);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      text-align: center;
+      transition: border-color var(--duration-base), transform var(--duration-base);
+    }
+    .why-card:hover { border-color: var(--gold-500); transform: translateY(-4px); }
+    .why-card-icon {
+      font-size: 2.5rem;
+      color: var(--gold-500);
+      margin-bottom: var(--space-4);
+    }
+    .why-card-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      margin-bottom: var(--space-3);
+    }
+    .why-card-text { font-size: var(--text-sm); color: var(--gray-400); line-height: var(--leading-loose); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/logo/dd-logo.jpg" alt="D.D Sports Management Logo" />
+        <div class="navbar-logo-text">
+          <span class="navbar-logo-name">D.D Sports</span>
+          <span class="navbar-logo-tagline">Confía en tu Destino</span>
+        </div>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="players.html">Players</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar-cta">
+        <a href="contact.html" class="btn btn-primary btn-sm">Get Signed</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary btn-lg">Get Signed</a>
+    <div class="mobile-nav-social">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <header class="page-hero" style="padding-top:var(--nav-height);">
+    <div class="page-hero-bg" style="background-image:url('assets/players/player-16.jpg');"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p class="page-hero-eyebrow">What We Offer</p>
+        <h1 class="page-hero-title">Our <span>Services</span></h1>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+          <span>Services</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- INTRO -->
+  <section class="section-sm bg-dark">
+    <div class="container" style="max-width:760px;text-align:center;" data-aos="fade-up">
+      <span class="section-eyebrow">Comprehensive Football Management</span>
+      <h2 class="section-title">Built for the <span class="text-gold">Elite</span></h2>
+      <div class="section-bar center"></div>
+      <p class="section-subtitle" style="margin:0 auto;">Every service we provide is designed to give our players a competitive edge — from first contract to global stardom. We handle the business so you can focus on the game.</p>
+    </div>
+  </section>
+
+
+  <!-- SERVICE DETAILS -->
+  <section class="section">
+    <div class="container">
+
+      <!-- 1. Player Representation -->
+      <div class="service-detail" data-aos="fade-up">
+        <div>
+          <div class="service-detail-icon"><i class="fa-solid fa-user-tie"></i></div>
+          <span class="section-eyebrow">Service 01</span>
+          <h2 class="section-title" style="font-size:clamp(var(--text-3xl),4vw,var(--text-5xl));">Player <span class="text-gold">Representation</span></h2>
+          <div class="section-bar"></div>
+          <p style="color:var(--gray-400);font-size:var(--text-sm);line-height:var(--leading-loose);margin-bottom:var(--space-4);">
+            We act as your dedicated representative in every aspect of your football career. From securing the right club to managing your public profile, we ensure you're always in the strongest possible position.
+          </p>
+          <p style="color:var(--gray-400);font-size:var(--text-sm);line-height:var(--leading-loose);">
+            Our FIFA-licensed agent has the connections and expertise to open doors at the highest levels of the game — locally and internationally.
+          </p>
+          <ul class="service-detail-list">
+            <li>Full career representation and advocacy</li>
+            <li>Club and federation negotiations</li>
+            <li>Image rights and commercial management</li>
+            <li>Sponsorship and endorsement deals</li>
+            <li>Media and PR management</li>
+          </ul>
+          <div style="margin-top:var(--space-8);">
+            <a href="contact.html" class="btn btn-primary">Get Represented <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-visual img-reveal" data-aos="fade-left" data-aos-delay="200">
+          <img src="assets/players/player-12.jpg" alt="Player Representation" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 2. Contract Negotiation -->
+      <div class="service-detail reverse" data-aos="fade-up">
+        <div>
+          <div class="service-detail-icon"><i class="fa-solid fa-file-signature"></i></div>
+          <span class="section-eyebrow">Service 02</span>
+          <h2 class="section-title" style="font-size:clamp(var(--text-3xl),4vw,var(--text-5xl));">Contract <span class="text-gold">Negotiation</span></h2>
+          <div class="section-bar"></div>
+          <p style="color:var(--gray-400);font-size:var(--text-sm);line-height:var(--leading-loose);margin-bottom:var(--space-4);">
+            Contracts define your career. Our experienced team meticulously analyses every clause, bonus structure, and performance incentive to ensure you receive the maximum value your talent deserves.
+          </p>
+          <p style="color:var(--gray-400);font-size:var(--text-sm);line-height:var(--leading-loose);">
+            We've completed 50+ successful deals across multiple leagues and jurisdictions, giving us the expertise to navigate even the most complex negotiations.
+          </p>
+          <ul class="service-detail-list">
+            <li>Transfer agreement and signing fee structuring</li>
+            <li>Salary and bonus clause optimisation</li>
+            <li>Release clause and buy-out negotiations</li>
+            <li>Loan deal management</li>
+            <li>Contract renewal and extension strategy</li>
+          </ul>
+          <div style="margin-top:var(--space-8);">
+            <a href="contact.html" class="btn btn-primary">Enquire Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-visual img-reveal" data-aos="fade-right" data-aos-delay="200">
+          <img src="assets/players/player-22.jpg" alt="Contract Negotiation" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 3. Scouting Network -->
+      <div class="service-detail" data-aos="fade-up">
+        <div>
+          <div class="service-detail-icon"><i class="fa-solid fa-binoculars"></i></div>
+          <span class="section-eyebrow">Service 03</span>
+          <h2 class="section-title" style="font-size:clamp(var(--text-3xl),4vw,var(--text-5xl));">Scouting <span class="text-gold">Network</span></h2>
+          <div class="section-bar"></div>
+          <p style="color:var(--gray-400);font-size:var(--text-sm);line-height:var(--leading-loose);margin-bottom:var(--space-4);">
+            We operate an extensive scouting network across Africa and Europe, identifying diamonds in the rough before anyone else. Our scouts attend leagues, academies, and tournaments at every level.
+          </p>
+          <p style="color:var(--gray-400);font-size:var(--text-sm);line-height:var(--leading-loose);">
+            We also work with clubs seeking specific player profiles, providing tailored scouting reports and player recommendations to fill squad needs.
+          </p>
+          <ul class="service-detail-list">
+            <li>Regional and international scouting operations</li>
+            <li>Talent identification and assessment reports</li>
+            <li>Video analysis and performance data</li>
+            <li>Club-specific recruitment services</li>
+            <li>Academy and development pathway guidance</li>
+          </ul>
+          <div style="margin-top:var(--space-8);">
+            <a href="contact.html" class="btn btn-primary">Scout a Player <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-visual img-reveal" data-aos="fade-left" data-aos-delay="200">
+          <img src="assets/players/player-19.jpg" alt="Scouting Network" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 4. Career Management -->
+      <div class="service-detail reverse" data-aos="fade-up">
+        <div>
+          <div class="service-detail-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <span class="section-eyebrow">Service 04</span>
+          <h2 class="section-title" style="font-size:clamp(var(--text-3xl),4vw,var(--text-5xl));">Career <span class="text-gold">Management</span></h2>
+          <div class="section-bar"></div>
+          <p style="color:var(--gray-400);font-size:var(--text-sm);line-height:var(--leading-loose);margin-bottom:var(--space-4);">
+            A football career is short. We plan for every stage — from emerging talent to established professional to post-career transition — ensuring our players are financially secure and personally fulfilled.
+          </p>
+          <p style="color:var(--gray-400);font-size:var(--text-sm);line-height:var(--leading-loose);">
+            Our holistic approach extends beyond the pitch, covering financial planning, personal branding, and mental wellbeing support.
+          </p>
+          <ul class="service-detail-list">
+            <li>Long-term career roadmapping and planning</li>
+            <li>Personal brand development and social media strategy</li>
+            <li>Financial management and investment guidance</li>
+            <li>Mental performance and wellbeing support</li>
+            <li>Post-career transition planning</li>
+          </ul>
+          <div style="margin-top:var(--space-8);">
+            <a href="contact.html" class="btn btn-primary">Start Your Journey <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-visual img-reveal" data-aos="fade-right" data-aos-delay="200">
+          <img src="assets/players/player-27.jpg" alt="Career Management" loading="lazy" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="section-header center" data-aos="fade-up">
+        <span class="section-eyebrow">The Process</span>
+        <h2 class="section-title">How It <span class="text-gold">Works</span></h2>
+        <div class="section-bar center"></div>
+      </div>
+
+      <div class="process-steps" data-aos="fade-up" data-aos-delay="200">
+        <div class="process-step">
+          <div class="process-step-num">01</div>
+          <h3 class="process-step-title">Discovery</h3>
+          <p class="process-step-text">We meet, assess your goals, current career position, and identify the best path forward for your unique situation.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">02</div>
+          <h3 class="process-step-title">Representation</h3>
+          <p class="process-step-text">We sign a representation agreement and immediately begin working your network to secure the best opportunities available.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">03</div>
+          <h3 class="process-step-title">Negotiation</h3>
+          <p class="process-step-text">We negotiate your contracts, transfers, and commercial deals with precision — maximising your value at every turn.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">04</div>
+          <h3 class="process-step-title">Growth</h3>
+          <p class="process-step-text">We continue to manage and evolve your career over the long term, ensuring sustained excellence and financial security.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WHY CHOOSE US -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center" data-aos="fade-up">
+        <span class="section-eyebrow">Why D.D Sports</span>
+        <h2 class="section-title">The <span class="text-gold">Advantage</span></h2>
+        <div class="section-bar center"></div>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="why-card-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h3 class="why-card-title">FIFA Licensed</h3>
+          <p class="why-card-text">Our agent holds full FIFA accreditation, ensuring every deal is conducted to the highest international standards.</p>
+        </div>
+        <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="why-card-icon"><i class="fa-solid fa-globe"></i></div>
+          <h3 class="why-card-title">Global Network</h3>
+          <p class="why-card-text">Established connections across Africa, Europe, and beyond — opening doors that other agents simply cannot reach.</p>
+        </div>
+        <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="why-card-icon"><i class="fa-solid fa-trophy"></i></div>
+          <h3 class="why-card-title">Proven Record</h3>
+          <p class="why-card-text">8+ years and 50+ transfers speak for themselves. Our track record of delivering results is unmatched in the region.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-inner" data-aos="zoom-in">
+        <span class="section-eyebrow">Work With Us</span>
+        <h2 class="cta-title">Ready to Work With <span class="text-gold">D.D Sports?</span></h2>
+        <p class="cta-subtitle">Whether you're a player seeking representation or a club looking for talent, we're here to help.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary btn-lg pulse-gold">Contact Us <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="players.html" class="btn btn-outline btn-lg">View Players</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <img class="footer-brand-logo" src="assets/logo/dd-logo.jpg" alt="D.D Sports Management" />
+          <p class="footer-brand-tagline">Confía en tu Destino</p>
+          <p class="footer-brand-text">FIFA Licensed football agency representing elite players and coaches globally.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Player Representation</a></li>
+            <li><a href="services.html">Contract Negotiation</a></li>
+            <li><a href="services.html">Scouting Network</a></li>
+            <li><a href="services.html">Career Management</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Contact</h4>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>info@ddsports.com</span></div>
+          <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp Available</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-certificate"></i><span>FIFA Licensed Agent</span></div>
+        </div>
+      </div>
+      <div class="divider-gold"></div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 <span>D.D Sports Management Agency</span>. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

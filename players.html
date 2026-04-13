@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="D.D Sports Management Agency player roster — browse our represented players by position." />
+  <title>Players — D.D Sports Management Agency</title>
+
+  <link rel="icon" type="image/jpeg" href="assets/logo/dd-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/logo/dd-logo.jpg" alt="D.D Sports Management Logo" />
+        <div class="navbar-logo-text">
+          <span class="navbar-logo-name">D.D Sports</span>
+          <span class="navbar-logo-tagline">Confía en tu Destino</span>
+        </div>
+      </a>
+      <ul class="navbar-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="players.html">Players</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar-cta">
+        <a href="contact.html" class="btn btn-primary btn-sm">Get Signed</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <ul class="mobile-nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary btn-lg">Get Signed</a>
+    <div class="mobile-nav-social">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <header class="page-hero" style="padding-top:var(--nav-height);">
+    <div class="page-hero-bg" style="background-image:url('assets/players/player-11.jpg');"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p class="page-hero-eyebrow">D.D Sports Management Agency</p>
+        <h1 class="page-hero-title">Our <span>Players</span></h1>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+          <span>Players</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" role="search">
+    <div class="filter-bar-inner">
+      <div class="filter-tabs" role="tablist">
+        <button class="filter-tab active" data-filter="all" role="tab">All <span id="visible-count" class="badge badge-gold" style="margin-left:6px;">27</span></button>
+        <button class="filter-tab" data-filter="goalkeeper" role="tab">Goalkeeper</button>
+        <button class="filter-tab" data-filter="defender" role="tab">Defender</button>
+        <button class="filter-tab" data-filter="midfielder" role="tab">Midfielder</button>
+        <button class="filter-tab" data-filter="forward" role="tab">Forward</button>
+      </div>
+      <div class="filter-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="player-search" placeholder="Search players…" aria-label="Search players" />
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PLAYERS GRID -->
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="players-grid" id="players-grid">
+
+        <!-- GK 1 -->
+        <article class="player-card" data-position="goalkeeper" data-name="player one" data-aos="fade-up" data-aos-delay="0">
+          <img class="player-card-img" src="assets/players/player-01.jpg" alt="Goalkeeper" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-gold">GK</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player One</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- GK 2 -->
+        <article class="player-card" data-position="goalkeeper" data-name="player two" data-aos="fade-up" data-aos-delay="80">
+          <img class="player-card-img" src="assets/players/player-02.jpg" alt="Goalkeeper" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-gold">GK</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Two</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- GK 3 -->
+        <article class="player-card" data-position="goalkeeper" data-name="player three" data-aos="fade-up" data-aos-delay="160">
+          <img class="player-card-img" src="assets/players/player-03.jpg" alt="Goalkeeper" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-gold">GK</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Three</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- DEF 1 -->
+        <article class="player-card" data-position="defender" data-name="player four" data-aos="fade-up" data-aos-delay="240">
+          <img class="player-card-img" src="assets/players/player-04.jpg" alt="Defender" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Four</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- DEF 2 -->
+        <article class="player-card" data-position="defender" data-name="player five" data-aos="fade-up" data-aos-delay="0">
+          <img class="player-card-img" src="assets/players/player-05.jpg" alt="Defender" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Five</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- DEF 3 -->
+        <article class="player-card" data-position="defender" data-name="player six" data-aos="fade-up" data-aos-delay="80">
+          <img class="player-card-img" src="assets/players/player-06.jpg" alt="Defender" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Six</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- DEF 4 -->
+        <article class="player-card" data-position="defender" data-name="player seven" data-aos="fade-up" data-aos-delay="160">
+          <img class="player-card-img" src="assets/players/player-07.jpg" alt="Defender" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Seven</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- DEF 5 -->
+        <article class="player-card" data-position="defender" data-name="player eight" data-aos="fade-up" data-aos-delay="240">
+          <img class="player-card-img" src="assets/players/player-08.jpg" alt="Defender" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Eight</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- DEF 6 -->
+        <article class="player-card" data-position="defender" data-name="player nine" data-aos="fade-up" data-aos-delay="0">
+          <img class="player-card-img" src="assets/players/player-09.jpg" alt="Defender" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Nine</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- DEF 7 -->
+        <article class="player-card" data-position="defender" data-name="player ten" data-aos="fade-up" data-aos-delay="80">
+          <img class="player-card-img" src="assets/players/player-10.jpg" alt="Defender" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Ten</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- DEF 8 -->
+        <article class="player-card" data-position="defender" data-name="player eleven" data-aos="fade-up" data-aos-delay="160">
+          <img class="player-card-img" src="assets/players/player-11.jpg" alt="Defender" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Eleven</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- MID 1 -->
+        <article class="player-card" data-position="midfielder" data-name="player twelve" data-aos="fade-up" data-aos-delay="240">
+          <img class="player-card-img" src="assets/players/player-12.jpg" alt="Midfielder" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Twelve</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- MID 2 -->
+        <article class="player-card" data-position="midfielder" data-name="player thirteen" data-aos="fade-up" data-aos-delay="0">
+          <img class="player-card-img" src="assets/players/player-13.jpg" alt="Midfielder" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Thirteen</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- MID 3 -->
+        <article class="player-card" data-position="midfielder" data-name="player fourteen" data-aos="fade-up" data-aos-delay="80">
+          <img class="player-card-img" src="assets/players/player-14.jpg" alt="Midfielder" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Fourteen</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- MID 4 -->
+        <article class="player-card" data-position="midfielder" data-name="player fifteen" data-aos="fade-up" data-aos-delay="160">
+          <img class="player-card-img" src="assets/players/player-15.jpg" alt="Midfielder" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Fifteen</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- MID 5 -->
+        <article class="player-card" data-position="midfielder" data-name="player sixteen" data-aos="fade-up" data-aos-delay="240">
+          <img class="player-card-img" src="assets/players/player-16.jpg" alt="Midfielder" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Sixteen</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- MID 6 -->
+        <article class="player-card" data-position="midfielder" data-name="player seventeen" data-aos="fade-up" data-aos-delay="0">
+          <img class="player-card-img" src="assets/players/player-17.jpg" alt="Midfielder" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Seventeen</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- MID 7 -->
+        <article class="player-card" data-position="midfielder" data-name="player eighteen" data-aos="fade-up" data-aos-delay="80">
+          <img class="player-card-img" src="assets/players/player-18.jpg" alt="Midfielder" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Eighteen</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- MID 8 -->
+        <article class="player-card" data-position="midfielder" data-name="player nineteen" data-aos="fade-up" data-aos-delay="160">
+          <img class="player-card-img" src="assets/players/player-19.jpg" alt="Midfielder" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Nineteen</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- MID 9 -->
+        <article class="player-card" data-position="midfielder" data-name="player twenty" data-aos="fade-up" data-aos-delay="240">
+          <img class="player-card-img" src="assets/players/player-20.jpg" alt="Midfielder" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Twenty</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- FWD 1 -->
+        <article class="player-card" data-position="forward" data-name="player twentyone" data-aos="fade-up" data-aos-delay="0">
+          <img class="player-card-img" src="assets/players/player-21.jpg" alt="Forward" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge" style="background:var(--navy-600);color:#fff;">FWD</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Twenty-One</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- FWD 2 -->
+        <article class="player-card" data-position="forward" data-name="player twentytwo" data-aos="fade-up" data-aos-delay="80">
+          <img class="player-card-img" src="assets/players/player-22.jpg" alt="Forward" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge" style="background:var(--navy-600);color:#fff;">FWD</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Twenty-Two</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- FWD 3 -->
+        <article class="player-card" data-position="forward" data-name="player twentythree" data-aos="fade-up" data-aos-delay="160">
+          <img class="player-card-img" src="assets/players/player-23.jpg" alt="Forward" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge" style="background:var(--navy-600);color:#fff;">FWD</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Twenty-Three</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- FWD 4 -->
+        <article class="player-card" data-position="forward" data-name="player twentyfour" data-aos="fade-up" data-aos-delay="240">
+          <img class="player-card-img" src="assets/players/player-24.jpg" alt="Forward" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge" style="background:var(--navy-600);color:#fff;">FWD</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Twenty-Four</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- FWD 5 -->
+        <article class="player-card" data-position="forward" data-name="player twentyfive" data-aos="fade-up" data-aos-delay="0">
+          <img class="player-card-img" src="assets/players/player-25.jpg" alt="Forward" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge" style="background:var(--navy-600);color:#fff;">FWD</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Twenty-Five</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- FWD 6 -->
+        <article class="player-card" data-position="forward" data-name="player twentysix" data-aos="fade-up" data-aos-delay="80">
+          <img class="player-card-img" src="assets/players/player-26.jpg" alt="Forward" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge" style="background:var(--navy-600);color:#fff;">FWD</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Twenty-Six</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+        <!-- FWD 7 -->
+        <article class="player-card" data-position="forward" data-name="player twentyseven" data-aos="fade-up" data-aos-delay="160">
+          <img class="player-card-img" src="assets/players/player-27.jpg" alt="Forward" loading="lazy" />
+          <div class="player-card-overlay"></div>
+          <div class="player-card-badge"><span class="badge" style="background:var(--navy-600);color:#fff;">FWD</span></div>
+          <div class="player-card-info">
+            <h3 class="player-card-name">Player Twenty-Seven</h3>
+            <p class="player-card-club"><i class="fa-solid fa-shield"></i> Club TBD</p>
+          </div>
+        </article>
+
+      </div><!-- /players-grid -->
+
+      <div class="load-more-wrap">
+        <button id="load-more-btn" class="btn btn-outline btn-lg hidden">
+          Load More Players
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-inner" data-aos="zoom-in">
+        <span class="section-eyebrow">Join the Roster</span>
+        <h2 class="cta-title">Want to Be <span class="text-gold">Represented?</span></h2>
+        <p class="cta-subtitle">Contact us today to begin your journey with D.D Sports Management Agency.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary btn-lg">Get Signed <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <img class="footer-brand-logo" src="assets/logo/dd-logo.jpg" alt="D.D Sports Management" />
+          <p class="footer-brand-tagline">Confía en tu Destino</p>
+          <p class="footer-brand-text">FIFA Licensed football agency representing elite players and coaches globally.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Player Representation</a></li>
+            <li><a href="services.html">Contract Negotiation</a></li>
+            <li><a href="services.html">Scouting Network</a></li>
+            <li><a href="services.html">Career Management</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Contact</h4>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>info@ddsports.com</span></div>
+          <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp Available</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-certificate"></i><span>FIFA Licensed Agent</span></div>
+        </div>
+      </div>
+      <div class="divider-gold"></div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 <span>D.D Sports Management Agency</span>. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/players.js"></script>
+</body>
+</html>

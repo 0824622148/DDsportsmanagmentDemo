@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About D.D Sports Management Agency — our story, founder, mission and vision." />
+  <title>About — D.D Sports Management Agency</title>
+
+  <link rel="icon" type="image/jpeg" href="assets/logo/dd-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <style>
+    .story-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: start;
+    }
+    @media (max-width: 900px) { .story-section { grid-template-columns: 1fr; } }
+
+    .story-quote {
+      position: sticky;
+      top: calc(var(--nav-height) + var(--space-8));
+    }
+
+    .blockquote {
+      position: relative;
+      padding: var(--space-8) var(--space-8) var(--space-8) var(--space-10);
+      border-left: 4px solid var(--gold-500);
+      background: var(--navy-800);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .blockquote::before {
+      content: '\201C';
+      position: absolute;
+      top: -20px;
+      left: var(--space-6);
+      font-size: 6rem;
+      line-height: 1;
+      color: var(--gold-500);
+      opacity: 0.3;
+      font-family: Georgia, serif;
+    }
+
+    .blockquote p {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: var(--tracking-wide);
+      line-height: var(--leading-snug);
+      text-transform: uppercase;
+    }
+
+    .mission-vision {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6);
+    }
+    @media (max-width: 640px) { .mission-vision { grid-template-columns: 1fr; } }
+
+    .mv-card {
+      padding: var(--space-10);
+      border-radius: var(--radius-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mv-card-mission {
+      background: var(--navy-800);
+      border: 1px solid var(--color-border);
+    }
+
+    .mv-card-vision {
+      background: linear-gradient(135deg, var(--navy-700), var(--navy-800));
+      border: 1px solid rgba(201, 162, 39, 0.3);
+    }
+
+    .mv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold-500);
+    }
+
+    .mv-icon {
+      font-size: 2.5rem;
+      color: var(--gold-500);
+      margin-bottom: var(--space-6);
+    }
+
+    .mv-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-3xl);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      margin-bottom: var(--space-4);
+    }
+
+    .mv-text {
+      font-size: var(--text-sm);
+      color: var(--gray-400);
+      line-height: var(--leading-loose);
+    }
+
+    .milestones {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+    }
+    @media (max-width: 768px) { .milestones { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 420px) { .milestones { grid-template-columns: 1fr; } }
+
+    .milestone-card {
+      background: var(--navy-800);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-8);
+      text-align: center;
+      transition: border-color var(--duration-base), transform var(--duration-base);
+    }
+    .milestone-card:hover { border-color: var(--gold-500); transform: translateY(-4px); }
+    .milestone-num {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+      font-weight: 700;
+      color: var(--gold-500);
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+    .milestone-label {
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/logo/dd-logo.jpg" alt="D.D Sports Management Logo" />
+        <div class="navbar-logo-text">
+          <span class="navbar-logo-name">D.D Sports</span>
+          <span class="navbar-logo-tagline">Confía en tu Destino</span>
+        </div>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="players.html">Players</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar-cta">
+        <a href="contact.html" class="btn btn-primary btn-sm">Get Signed</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary btn-lg">Get Signed</a>
+    <div class="mobile-nav-social">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <header class="page-hero" style="padding-top:var(--nav-height);">
+    <div class="page-hero-bg" style="background-image:url('assets/players/player-08.jpg');"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p class="page-hero-eyebrow">FIFA Licensed Football Agency</p>
+        <h1 class="page-hero-title">About <span>Us</span></h1>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+          <span>About</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- STORY -->
+  <section class="section">
+    <div class="container">
+      <div class="story-section">
+        <div class="story-quote" data-aos="fade-right">
+          <div class="blockquote">
+            <p>"Confía en tu Destino — Trust in your Destiny"</p>
+          </div>
+          <div style="margin-top:var(--space-8);">
+            <img src="assets/players/player-27.jpg" alt="D.D Sports Management" loading="lazy"
+              style="width:100%;border-radius:var(--radius-lg);object-fit:cover;object-position:center 15%;aspect-ratio:4/3;" />
+          </div>
+        </div>
+
+        <div data-aos="fade-left" data-aos-delay="150">
+          <span class="section-eyebrow">Our Story</span>
+          <h2 class="section-title" style="font-size:clamp(var(--text-3xl),4vw,var(--text-5xl));">Born from a <span class="text-gold">Passion</span> for Football</h2>
+          <div class="section-bar"></div>
+
+          <p style="color:var(--gray-400);font-size:var(--text-sm);line-height:var(--leading-loose);margin-bottom:var(--space-6);">
+            D.D Sports Management Agency was founded on a single belief: that exceptional football talent deserves exceptional representation. In a landscape full of agents chasing short-term commissions, we chose a different path — one built on long-term relationships, genuine care, and measurable results.
+          </p>
+          <p style="color:var(--gray-400);font-size:var(--text-sm);line-height:var(--leading-loose);margin-bottom:var(--space-6);">
+            Over eight years, we have built one of the most respected football management operations in the region, representing players and coaches who compete at the highest levels across Africa, Europe, and beyond.
+          </p>
+          <p style="color:var(--gray-400);font-size:var(--text-sm);line-height:var(--leading-loose);margin-bottom:var(--space-6);">
+            Our tagline — <em>"Confía en tu Destino"</em> — is more than a phrase. It's a commitment. We believe every player has a destiny. Our job is to clear the path so they can reach it.
+          </p>
+          <p style="color:var(--gray-400);font-size:var(--text-sm);line-height:var(--leading-loose);">
+            Today, with a roster of 27+ active players, a global scouting network, and a track record of 50+ successful transfers, D.D Sports Management is positioned as one of Africa's premier football agencies — with eyes set firmly on the world stage.
+          </p>
+
+          <div style="margin-top:var(--space-10);display:flex;gap:var(--space-4);flex-wrap:wrap;">
+            <a href="players.html" class="btn btn-primary">Our Players <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="services.html" class="btn btn-outline">Our Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MILESTONES -->
+  <section class="section-sm bg-dark">
+    <div class="container">
+      <div class="milestones">
+        <div class="milestone-card" data-aos="zoom-in" data-aos-delay="0">
+          <div class="milestone-num" data-count="8" data-suffix="+">8+</div>
+          <div class="milestone-label">Years Active</div>
+        </div>
+        <div class="milestone-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="milestone-num" data-count="27" data-suffix="+">27+</div>
+          <div class="milestone-label">Players Represented</div>
+        </div>
+        <div class="milestone-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="milestone-num" data-count="50" data-suffix="+">50+</div>
+          <div class="milestone-label">Transfer Deals</div>
+        </div>
+        <div class="milestone-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="milestone-num" data-count="15" data-suffix="+">15+</div>
+          <div class="milestone-label">Countries Covered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOUNDER -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center" data-aos="fade-up">
+        <span class="section-eyebrow">The Agent Behind the Agency</span>
+        <h2 class="section-title">Meet the <span class="text-gold">Founder</span></h2>
+        <div class="section-bar center"></div>
+      </div>
+
+      <div class="founder-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="founder-avatar">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
+        <h3 class="founder-name">The Lead Agent</h3>
+        <p class="founder-title">FIFA Licensed Football Agent · Founder & Director</p>
+        <div class="founder-creds">
+          <div class="founder-cred"><i class="fa-solid fa-certificate"></i> FIFA Licensed</div>
+          <div class="founder-cred"><i class="fa-solid fa-clock"></i> 8+ Years Experience</div>
+          <div class="founder-cred"><i class="fa-solid fa-globe"></i> Global Reach</div>
+          <div class="founder-cred"><i class="fa-solid fa-handshake"></i> 50+ Deals Closed</div>
+        </div>
+        <p class="founder-bio">
+          With over 8 years in professional football management, our founder has built a reputation as one of the most knowledgeable and connected agents in African football. Holding a full FIFA License, they have successfully negotiated transfers, represented players at top clubs, and developed a scouting network that spans multiple continents. Their vision: to give every talented player the platform and representation they deserve — regardless of where they come from.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MISSION & VISION -->
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="section-header center" data-aos="fade-up">
+        <span class="section-eyebrow">What Drives Us</span>
+        <h2 class="section-title">Mission & <span class="text-gold">Vision</span></h2>
+        <div class="section-bar center"></div>
+      </div>
+
+      <div class="mission-vision" data-aos="fade-up" data-aos-delay="150">
+        <div class="mv-card mv-card-mission">
+          <div class="mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h3 class="mv-title">Our Mission</h3>
+          <p class="mv-text">
+            To provide world-class football management services that empower players and coaches to reach the pinnacle of their careers. We do this through expert representation, transparent communication, and an unwavering commitment to our clients' best interests.
+          </p>
+          <ul style="list-style:none;margin-top:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3);">
+            <li style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);color:var(--gray-200);">
+              <i class="fa-solid fa-check-circle" style="color:var(--gold-500);"></i> Elite player representation
+            </li>
+            <li style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);color:var(--gray-200);">
+              <i class="fa-solid fa-check-circle" style="color:var(--gold-500);"></i> Transparent and ethical management
+            </li>
+            <li style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);color:var(--gray-200);">
+              <i class="fa-solid fa-check-circle" style="color:var(--gold-500);"></i> Long-term career development focus
+            </li>
+          </ul>
+        </div>
+
+        <div class="mv-card mv-card-vision">
+          <div class="mv-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3 class="mv-title">Our Vision</h3>
+          <p class="mv-text">
+            To be the most trusted football management agency in Africa and a globally recognised brand — known for developing elite talent, brokering landmark deals, and elevating the profile of African football on the world stage.
+          </p>
+          <ul style="list-style:none;margin-top:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3);">
+            <li style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);color:var(--gray-200);">
+              <i class="fa-solid fa-star" style="color:var(--gold-500);"></i> Africa's #1 football agency
+            </li>
+            <li style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);color:var(--gray-200);">
+              <i class="fa-solid fa-star" style="color:var(--gold-500);"></i> Global talent pipeline for top clubs
+            </li>
+            <li style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);color:var(--gray-200);">
+              <i class="fa-solid fa-star" style="color:var(--gold-500);"></i> Empowering the next generation of stars
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- VALUES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center" data-aos="fade-up">
+        <span class="section-eyebrow">What We Stand For</span>
+        <h2 class="section-title">Our <span class="text-gold">Values</span></h2>
+        <div class="section-bar center"></div>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-item" data-aos="fade-up" data-aos-delay="0">
+          <div class="value-icon"><i class="fa-solid fa-medal"></i></div>
+          <h4 class="value-title">Excellence</h4>
+          <p class="value-text">We pursue the highest standards in everything we do — from negotiations to communications.</p>
+        </div>
+        <div class="value-item" data-aos="fade-up" data-aos-delay="80">
+          <div class="value-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h4 class="value-title">Integrity</h4>
+          <p class="value-text">We operate with full transparency and honesty — our clients' trust is our greatest asset.</p>
+        </div>
+        <div class="value-item" data-aos="fade-up" data-aos-delay="160">
+          <div class="value-icon"><i class="fa-solid fa-fire"></i></div>
+          <h4 class="value-title">Dedication</h4>
+          <p class="value-text">Our commitment to each player is absolute. We go above and beyond, every time.</p>
+        </div>
+        <div class="value-item" data-aos="fade-up" data-aos-delay="0">
+          <div class="value-icon"><i class="fa-solid fa-globe"></i></div>
+          <h4 class="value-title">Global Reach</h4>
+          <p class="value-text">We think beyond borders — connecting talent with opportunities worldwide.</p>
+        </div>
+        <div class="value-item" data-aos="fade-up" data-aos-delay="80">
+          <div class="value-icon"><i class="fa-solid fa-eye"></i></div>
+          <h4 class="value-title">Transparency</h4>
+          <p class="value-text">No hidden agendas. Clear communication and honest advice at every step.</p>
+        </div>
+        <div class="value-item" data-aos="fade-up" data-aos-delay="160">
+          <div class="value-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h4 class="value-title">Performance</h4>
+          <p class="value-text">Results matter. We measure success by our clients' success on and off the pitch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-inner" data-aos="zoom-in">
+        <span class="section-eyebrow">Join Us</span>
+        <h2 class="cta-title">Believe in Your <span class="text-gold">Destiny</span></h2>
+        <p class="cta-subtitle">Confiá en tu destino. Take the first step and contact D.D Sports Management Agency today.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary btn-lg pulse-gold">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="services.html" class="btn btn-outline btn-lg">Our Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <img class="footer-brand-logo" src="assets/logo/dd-logo.jpg" alt="D.D Sports Management" />
+          <p class="footer-brand-tagline">Confía en tu Destino</p>
+          <p class="footer-brand-text">FIFA Licensed football agency representing elite players and coaches globally.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Player Representation</a></li>
+            <li><a href="services.html">Contract Negotiation</a></li>
+            <li><a href="services.html">Scouting Network</a></li>
+            <li><a href="services.html">Career Management</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Contact</h4>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>info@ddsports.com</span></div>
+          <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp Available</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-certificate"></i><span>FIFA Licensed Agent</span></div>
+        </div>
+      </div>
+      <div class="divider-gold"></div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 <span>D.D Sports Management Agency</span>. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+/* ============================================
+   D.D SPORTS MANAGEMENT — ANIMATIONS
+   ============================================ */
+
+/* ── AOS overrides ── */
+[data-aos] { pointer-events: none; }
+[data-aos].aos-animate { pointer-events: auto; }
+
+/* ── Gold shimmer on load ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--gold-500) 0%,
+    var(--gold-300) 40%,
+    var(--gold-500) 60%,
+    var(--gold-400) 100%
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── Pulse glow on gold elements ── */
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 0 0 var(--gold-glow); }
+  50%       { box-shadow: 0 0 20px 8px var(--gold-glow); }
+}
+
+.pulse-gold { animation: pulseGold 3s ease-in-out infinite; }
+
+/* ── Fade in from below ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp var(--duration-slow) var(--ease-out) both;
+}
+
+/* ── Stagger delays for children ── */
+.stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stagger > *:nth-child(2) { animation-delay: 100ms; }
+.stagger > *:nth-child(3) { animation-delay: 200ms; }
+.stagger > *:nth-child(4) { animation-delay: 300ms; }
+.stagger > *:nth-child(5) { animation-delay: 400ms; }
+.stagger > *:nth-child(6) { animation-delay: 500ms; }
+
+/* ── Hero entrance animations ── */
+.hero-eyebrow  { animation: fadeUp 0.7s 0.1s var(--ease-out) both; }
+.hero-title    { animation: fadeUp 0.8s 0.25s var(--ease-out) both; }
+.hero-subtitle { animation: fadeUp 0.8s 0.45s var(--ease-out) both; }
+.hero-cta      { animation: fadeUp 0.8s 0.6s var(--ease-out) both; }
+
+/* ── Scale in ── */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1);   }
+}
+
+/* ── Slide from left ── */
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Slide from right ── */
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Counter animation (JS-driven, class trigger) ── */
+.counter-value {
+  display: inline-block;
+  transition: transform 0.1s;
+}
+
+/* ── Gold line grow ── */
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.section-bar {
+  animation: lineGrow 0.8s 0.3s var(--ease-out) both;
+  transform-origin: left;
+}
+
+/* ── Floating animation for badges ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-8px); }
+}
+
+.float { animation: float 4s ease-in-out infinite; }
+
+/* ── Spin for loading ── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Background parallax helper ── */
+.parallax-bg {
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+
+/* ── Image reveal overlay ── */
+.img-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-reveal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--navy-950);
+  transform-origin: right;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.img-reveal.revealed::after {
+  transform: scaleX(0);
+}
+
+/* ── Gradient border on hover ── */
+.gradient-border {
+  position: relative;
+  background: var(--navy-800);
+  border-radius: var(--radius-md);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, var(--gold-500), var(--navy-700));
+  border-radius: calc(var(--radius-md) + 1px);
+  opacity: 0;
+  transition: opacity var(--duration-base);
+  z-index: -1;
+}
+
+.gradient-border:hover::before { opacity: 1; }
+
+/* ── Marquee pause on section hover ── */
+.marquee-section:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ── Navbar transition when scrolled ── */
+.navbar {
+  transition: background 0.4s var(--ease-in-out),
+              backdrop-filter 0.4s var(--ease-in-out),
+              box-shadow 0.4s var(--ease-in-out);
+}
+
+/* ── Mobile nav link entrance ── */
+.mobile-nav.open .mobile-nav-links a {
+  animation: fadeUp 0.5s var(--ease-out) both;
+}
+
+.mobile-nav.open .mobile-nav-links a:nth-child(1) { animation-delay: 0.05s; }
+.mobile-nav.open .mobile-nav-links a:nth-child(2) { animation-delay: 0.1s; }
+.mobile-nav.open .mobile-nav-links a:nth-child(3) { animation-delay: 0.15s; }
+.mobile-nav.open .mobile-nav-links a:nth-child(4) { animation-delay: 0.2s; }
+.mobile-nav.open .mobile-nav-links a:nth-child(5) { animation-delay: 0.25s; }
+.mobile-nav.open .mobile-nav-links a:nth-child(6) { animation-delay: 0.3s; }
+
+/* ── Page transition ── */
+body {
+  animation: pageIn 0.5s var(--ease-out) both;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-bg { transform: none; }
+  .marquee-track { animation: none; }
+}
