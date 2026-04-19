@@ -66,6 +66,7 @@
   letter-spacing: var(--tracking-wider);
   color: var(--white);
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .navbar-logo-tagline {
