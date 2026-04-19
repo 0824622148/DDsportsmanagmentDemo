@@ -48,7 +48,9 @@
   height: 48px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 3px 6px;
 }
 
 .navbar-logo-text {
@@ -1299,7 +1301,9 @@
   height: 56px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
   margin-bottom: var(--space-4);
 }
 
