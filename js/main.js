@@ -180,20 +180,47 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── CONTACT FORM ── */
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = contactForm.querySelector('button[type="submit"]');
+      const original = btn ? btn.innerHTML : '';
       if (btn) {
-        const original = btn.innerHTML;
-        btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
-        btn.style.background = '#22c55e';
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
         btn.disabled = true;
-        setTimeout(() => {
-          btn.innerHTML = original;
-          btn.style.background = '';
-          btn.disabled = false;
+      }
+      const data = new FormData(contactForm);
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' }
+        });
+        if (res.ok) {
+          if (btn) {
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
+            btn.style.background = '#22c55e';
+          }
           contactForm.reset();
-        }, 4000);
+          setTimeout(() => {
+            if (btn) {
+              btn.innerHTML = original;
+              btn.style.background = '';
+              btn.disabled = false;
+            }
+          }, 5000);
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        if (btn) {
+          btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Failed — try WhatsApp';
+          btn.style.background = '#ef4444';
+          setTimeout(() => {
+            btn.innerHTML = original;
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 4000);
+        }
       }
     });
   }
