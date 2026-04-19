@@ -232,11 +232,9 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center center;
   filter: brightness(0.55);
-  transition: none;
 }
 
 .hero::after {
