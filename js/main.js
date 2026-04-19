@@ -199,13 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* ── HERO PARALLAX (subtle) ── */
-  const heroBg = document.querySelector('.hero-bg');
-  if (heroBg && window.innerWidth > 768) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      heroBg.style.transform = `scale(1.08) translateY(${scrolled * 0.2}px)`;
-    }, { passive: true });
-  }
+  /* ── HERO PARALLAX disabled — hero uses contain to show full image ── */
 
 });
