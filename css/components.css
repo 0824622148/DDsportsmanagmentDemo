@@ -965,24 +965,26 @@
 .partner-badge {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-6);
+  justify-content: center;
+  padding: var(--space-3) var(--space-5);
   background: var(--navy-800);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  white-space: nowrap;
-  transition: border-color var(--duration-base);
+  border-radius: var(--radius-md);
+  transition: border-color var(--duration-base), background var(--duration-base);
+  flex-shrink: 0;
 }
 
-.partner-badge i { color: var(--gold-500); }
-.partner-badge span {
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--gray-400);
-  letter-spacing: var(--tracking-wide);
+.partner-badge img {
+  height: 48px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  filter: grayscale(30%) brightness(1.1);
+  transition: filter var(--duration-base);
 }
 
-.partner-badge:hover { border-color: var(--gold-500); }
+.partner-badge:hover { border-color: var(--gold-500); background: var(--navy-700); }
+.partner-badge:hover img { filter: grayscale(0%) brightness(1.2); }
 
 
 /* ════════════════════════════════════════════
