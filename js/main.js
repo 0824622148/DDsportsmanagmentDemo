@@ -226,6 +226,88 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  /* ── TRANSFER WINDOW COUNTDOWN ── */
+  (function initTransferCountdown() {
+    const WINDOWS = [
+      {
+        name:   'Summer Transfer Window 2026',
+        opens:  new Date(Date.UTC(2026, 5, 10)),
+        closes: new Date(Date.UTC(2026, 7, 31, 23, 59, 59)),
+      },
+      {
+        name:   'Winter Transfer Window 2027',
+        opens:  new Date(Date.UTC(2027, 0, 1)),
+        closes: new Date(Date.UTC(2027, 0, 31, 23, 59, 59)),
+      },
+    ];
+
+    const elName  = document.getElementById('tw-window-name');
+    const elBadge = document.getElementById('tw-status-badge');
+    const elLabel = document.getElementById('tw-status-label');
+    const elDays  = document.getElementById('tw-days');
+    const elHours = document.getElementById('tw-hours');
+    const elMins  = document.getElementById('tw-minutes');
+    const elSecs  = document.getElementById('tw-seconds');
+
+    if (!elDays) return;
+
+    const pad = n => String(Math.max(0, n)).padStart(2, '0');
+    const fmtDate = d => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+    function msToComponents(ms) {
+      const s = Math.floor(ms / 1000);
+      return {
+        days:    Math.floor(s / 86400),
+        hours:   Math.floor(s / 3600) % 24,
+        minutes: Math.floor(s / 60) % 60,
+        seconds: s % 60,
+      };
+    }
+
+    function tick() {
+      const now = Date.now();
+      let target = null, isOpen = false;
+
+      for (const win of WINDOWS) {
+        if (now < win.opens.getTime())                                 { target = win; isOpen = false; break; }
+        if (now >= win.opens.getTime() && now <= win.closes.getTime()) { target = win; isOpen = true;  break; }
+      }
+
+      if (!target) {
+        elName.textContent  = 'Transfer Window';
+        elBadge.textContent = 'Closed';
+        elBadge.classList.remove('tw-open');
+        elLabel.innerHTML   = 'No upcoming window is currently scheduled.';
+        ['tw-days','tw-hours','tw-minutes','tw-seconds'].forEach(id => { document.getElementById(id).textContent = '00'; });
+        return;
+      }
+
+      elName.textContent = target.name;
+      const remaining = (isOpen ? target.closes : target.opens).getTime() - now;
+      if (remaining <= 0) return;
+
+      const { days, hours, minutes, seconds } = msToComponents(remaining);
+      elDays.textContent  = pad(days);
+      elHours.textContent = pad(hours);
+      elMins.textContent  = pad(minutes);
+      elSecs.textContent  = pad(seconds);
+
+      if (isOpen) {
+        elBadge.textContent = 'Window Open';
+        elBadge.classList.add('tw-open');
+        elLabel.innerHTML = `Window closes <strong>${fmtDate(target.closes)}</strong>`;
+      } else {
+        elBadge.textContent = 'Opens In';
+        elBadge.classList.remove('tw-open');
+        elLabel.innerHTML = `Next window opens <strong>${fmtDate(target.opens)}</strong>`;
+      }
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+
   /* ── HERO PARALLAX disabled — hero uses contain to show full image ── */
 
 });
