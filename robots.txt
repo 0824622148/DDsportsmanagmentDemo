@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ddsportsmanagement.co.za/sitemap.xml
