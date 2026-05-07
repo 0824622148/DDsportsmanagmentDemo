@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   sync:
+    if: false  # Disabled — replaced by fetch-news.yml (Google Sheets pipeline)
     runs-on: ubuntu-latest
 
     steps:
