@@ -173,13 +173,19 @@ function normaliseCategory(raw) {
   return CATEGORY[k] ? k : 'announcement';
 }
 
-function driveDirectUrl(shareUrl) {
+// Returns a Google CDN thumbnail URL that works for any publicly shared Drive file.
+// No download needed — the img src points directly to Google's servers.
+function driveThumbUrl(shareUrl) {
   if (!shareUrl) return null;
+  let fileId = null;
   const m1 = shareUrl.match(/\/file\/d\/([^/?#\s]+)/);
-  if (m1) return `https://drive.google.com/uc?export=download&id=${m1[1]}`;
-  const m2 = shareUrl.match(/[?&]id=([^&\s]+)/);
-  if (m2) return `https://drive.google.com/uc?export=download&id=${m2[1]}`;
-  return null;
+  if (m1) fileId = m1[1];
+  if (!fileId) {
+    const m2 = shareUrl.match(/[?&]id=([^&\s]+)/);
+    if (m2) fileId = m2[1];
+  }
+  if (!fileId) return null;
+  return `https://lh3.googleusercontent.com/d/${fileId}`;
 }
 
 function rowsToItems(rows) {
@@ -326,33 +332,16 @@ async function main() {
       continue;
     }
 
-    // Google Drive share link
+    // Google Drive share link — use CDN thumbnail URL directly, no download needed
     if (imageUrl) {
-      const directUrl = driveDirectUrl(imageUrl);
-      if (!directUrl) {
+      const thumbUrl = driveThumbUrl(imageUrl);
+      if (!thumbUrl) {
         console.warn(`  Cannot parse Drive URL for "${item.title}" — using placeholder`);
         item._localImg = PLACEHOLDER;
         continue;
       }
-
-      const slug     = slugify(item.title);
-      const dest     = path.join(IMG_DIR, `${slug}.jpg`);
-      const webPath  = `assets/news-images/${slug}.jpg`;
-
-      if (fs.existsSync(dest)) {
-        item._localImg = webPath;
-        continue;
-      }
-
-      try {
-        await downloadImage(directUrl, dest);
-        console.log(`  Downloaded image for "${item.title}"`);
-        item._localImg = webPath;
-      } catch (err) {
-        console.warn(`  Image download failed for "${item.title}": ${err.message}`);
-        if (fs.existsSync(dest)) fs.unlinkSync(dest);
-        item._localImg = PLACEHOLDER;
-      }
+      console.log(`  Using Drive image for "${item.title}"`);
+      item._localImg = thumbUrl;
       continue;
     }
 
