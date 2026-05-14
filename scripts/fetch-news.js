@@ -173,8 +173,8 @@ function normaliseCategory(raw) {
   return CATEGORY[k] ? k : 'announcement';
 }
 
-// Returns a Google CDN thumbnail URL that works for any publicly shared Drive file.
-// No download needed — the img src points directly to Google's servers.
+// Returns a Google Drive thumbnail URL that works for any publicly shared Drive file.
+// Uses drive.google.com/thumbnail which is more reliable than lh3.googleusercontent.com for hotlinking.
 function driveThumbUrl(shareUrl) {
   if (!shareUrl) return null;
   let fileId = null;
@@ -185,7 +185,7 @@ function driveThumbUrl(shareUrl) {
     if (m2) fileId = m2[1];
   }
   if (!fileId) return null;
-  return `https://lh3.googleusercontent.com/d/${fileId}`;
+  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w800`;
 }
 
 function rowsToItems(rows) {
@@ -200,6 +200,195 @@ function rowsToItems(rows) {
   }));
 }
 
+// ── Article page generator ────────────────────────────────────────────────────
+
+function articleFilename(item) {
+  return `news-${slugify(item.title)}.html`;
+}
+
+function generateArticlePage(item) {
+  const cat     = normaliseCategory(item.category);
+  const meta    = CATEGORY[cat];
+  const title   = escapeHtml(item.title);
+  const excerpt = escapeHtml(item.excerpt);
+  const date    = formatDate(item.dateRaw);
+  const imgSrc  = escapeHtml(item._localImg || PLACEHOLDER);
+  const bgImg   = imgSrc.startsWith('http') ? imgSrc : imgSrc;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="${excerpt}" />
+  <title>${title} — D.D Sports Management Agency</title>
+
+  <link rel="icon" type="image/jpeg" href="assets/logo/dd-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/logo/dd-logo.jpg" alt="D.D Sports Management Logo" />
+        <div class="navbar-logo-text">
+          <span class="navbar-logo-name">D.D Sports Management</span>
+          <span class="navbar-logo-tagline">Confía en tu Destino</span>
+        </div>
+      </a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="players.html">Players</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar-cta">
+        <a href="contact.html" class="btn btn-primary btn-sm">Get Signed</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="players.html">Players</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary btn-lg">Get Signed</a>
+    <div class="mobile-nav-social">
+      <a href="https://www.instagram.com/ddsportsmanagementagency?igsh=b3FidjN4ZDg2Yzlv" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/donte-dorlly-9b1210306/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <header class="page-hero" style="padding-top:var(--nav-height);">
+    <div class="page-hero-bg" style="background-image:url('${bgImg}');"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <p class="page-hero-eyebrow">${meta.label}</p>
+        <h1 class="page-hero-title">${title}</h1>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+          <a href="news.html">News</a>
+          <span class="breadcrumb-sep"><i class="fa-solid fa-chevron-right"></i></span>
+          <span>${meta.label}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ARTICLE -->
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+
+      <div data-aos="fade-up" style="margin-bottom:var(--space-8);">
+        <div style="display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;margin-bottom:var(--space-6);">
+          <span class="badge ${meta.badge}">${meta.label}</span>
+          <p style="font-size:var(--text-sm);color:var(--gray-400);margin:0;">
+            <i class="fa-regular fa-calendar"></i> ${date}
+          </p>
+        </div>
+
+        <h1 style="font-family:var(--font-display);font-size:clamp(var(--text-2xl),4vw,var(--text-4xl));color:var(--white);line-height:var(--leading-tight);margin-bottom:var(--space-6);">
+          ${title}
+        </h1>
+
+        <img src="${imgSrc}" alt="${title}" style="width:100%;border-radius:var(--radius-xl);margin-bottom:var(--space-8);object-fit:cover;max-height:480px;" loading="lazy" />
+
+        <div style="font-size:var(--text-base);color:var(--gray-300);line-height:var(--leading-loose);">
+          <p>${excerpt}</p>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" style="border-top:1px solid var(--gray-800);padding-top:var(--space-8);">
+        <a href="news.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to News</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <img class="footer-brand-logo" src="assets/logo/dd-logo.jpg" alt="D.D Sports Management" />
+          <p class="footer-brand-tagline">Confía en tu Destino</p>
+          <p style="color:var(--gray-400);font-size:var(--text-xs);line-height:var(--leading-loose);font-style:italic;margin-bottom:var(--space-4);">"Success is no accident. It is hard work, perseverance, learning, studying, sacrifice, and most of all, love of what you are doing or learning to do." — Pelé</p>
+          <p class="footer-brand-text">FIFA Licensed football agency representing elite players and coaches globally.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/ddsportsmanagementagency?igsh=b3FidjN4ZDg2Yzlv" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/donte-dorlly-9b1210306/" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://wa.me/27711191480" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="news.html">Transfers</a></li>
+            <li><a href="news.html">Announcements</a></li>
+            <li><a href="news.html">Scouting</a></li>
+            <li><a href="news.html">Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Contact</h4>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>ddsportsagency1@gmail.com</span></div>
+          <div class="footer-contact-item"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp Available</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-certificate"></i><span>FIFA Licensed Agent</span></div>
+        </div>
+      </div>
+      <div class="divider-gold"></div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 <span>D.D Sports Management Agency</span>. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>`;
+}
+
 // ── Card HTML generators ──────────────────────────────────────────────────────
 
 function homeCard(item, index) {
@@ -212,6 +401,7 @@ function homeCard(item, index) {
   const date   = formatDate(item.dateRaw);
   const imgSrc = escapeHtml(item._localImg || PLACEHOLDER);
   const delay  = index * 100;
+  const href   = escapeHtml(articleFilename(item));
 
   return `        <article class="news-card" data-aos="fade-up" data-aos-delay="${delay}">
           <div class="news-card-img">
@@ -224,7 +414,7 @@ function homeCard(item, index) {
             <p class="news-card-excerpt">${excerpt}</p>
           </div>
           <div class="news-card-footer">
-            <a href="news.html" class="news-card-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="${href}" class="news-card-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>`;
 }
@@ -239,6 +429,7 @@ function newsCard(item, index) {
   const date   = formatDate(item.dateRaw);
   const imgSrc = escapeHtml(item._localImg || PLACEHOLDER);
   const delay  = (index % 3) * 100;
+  const href   = escapeHtml(articleFilename(item));
 
   return `        <article class="news-card" data-category="${cat}" data-aos="fade-up" data-aos-delay="${delay}">
           <div class="news-card-img">
@@ -251,7 +442,7 @@ function newsCard(item, index) {
             <p class="news-card-excerpt">${excerpt}</p>
           </div>
           <div class="news-card-footer">
-            <a href="news.html" class="news-card-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="${href}" class="news-card-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>`;
 }
@@ -347,6 +538,14 @@ async function main() {
 
     // No image URL provided
     item._localImg = PLACEHOLDER;
+  }
+
+  console.log('Generating article pages...');
+  for (const item of items.slice(0, NEWS_LIMIT)) {
+    const filename = articleFilename(item);
+    const filePath = path.join(ROOT, filename);
+    fs.writeFileSync(filePath, generateArticlePage(item), 'utf8');
+    console.log(`  Generated ${filename}`);
   }
 
   console.log('Updating HTML...');

@@ -30,6 +30,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html news.html assets/news-images/
+          git add index.html news.html news-*.html assets/news-images/
           git diff --staged --quiet || git commit -m "chore: sync news from Google Sheets [skip ci]"
           git push
