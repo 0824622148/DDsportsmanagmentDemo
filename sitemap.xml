@@ -3,7 +3,7 @@
 
   <url>
     <loc>https://ddsportsmanagement.co.za/</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -31,7 +31,7 @@
 
   <url>
     <loc>https://ddsportsmanagement.co.za/news.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -44,50 +44,57 @@
   </url>
 
   <url>
-    <loc>https://ddsportsmanagement.co.za/news-sundowns-cafcl.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <loc>https://ddsportsmanagement.co.za/news-dd-sports-management-agency-is-delighted-to-welcome-ivans-patrikejevs.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ddsportsmanagement.co.za/news-congratulations-to-mamelodi-sundowns-and-our-client-khuliso-mudau-sundowns-book-.html</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://ddsportsmanagement.co.za/news-lyema-dopolo.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <loc>https://ddsportsmanagement.co.za/news-dd-sports-management-agency-welcomes-mashiku-hans-muyeka.html</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://ddsportsmanagement.co.za/news-obioma-scouting.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <loc>https://ddsportsmanagement.co.za/news-scouting-news-dd-sports-management-closely-monitoring-chukwuemeka-obioma.html</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://ddsportsmanagement.co.za/news-mashiku-muyeka.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <loc>https://ddsportsmanagement.co.za/news-transfer-news-lyema-dopolo-signs-for-ongos-fc-from-supersport-united.html</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://ddsportsmanagement.co.za/news-cheick-konate.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <loc>https://ddsportsmanagement.co.za/news-warm-welcome-to-rodan-pillay-our-new-head-of-scouting.html</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://ddsportsmanagement.co.za/news-derrick-owusu.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <loc>https://ddsportsmanagement.co.za/news-welcome-cheick-oumar-konat-to-the-agency.html</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://ddsportsmanagement.co.za/news-rodan-pillay.html</loc>
-    <lastmod>2026-05-03</lastmod>
+    <loc>https://ddsportsmanagement.co.za/news-welcome-derrick-owusu-to-the-family.html</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
