@@ -1909,3 +1909,14 @@
   .tw-block { min-width: unset; padding: var(--space-4); }
   .tw-block-number { font-size: var(--text-4xl); }
 }
+
+/* ── Portrait news photos ─────────────────────────────────────────────────────
+   Cards, the featured panel and the in-article image all crop with
+   object-fit: cover at "center 15%", which slices the head off a tall portrait
+   shot. Anchor these to the top instead. Selectors are scoped to beat the
+   .news-card-img / .news-featured-img rules above on specificity, not order. */
+.news-card-img img[src*="news-lindokuhle-zungu-medical"],
+.news-featured-img img[src*="news-lindokuhle-zungu-medical"],
+img[src*="news-lindokuhle-zungu-medical"] {
+  object-position: center top;
+}
