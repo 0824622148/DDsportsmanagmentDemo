@@ -3,7 +3,7 @@
 
   <url>
     <loc>https://ddsportsmanagement.co.za/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -17,7 +17,7 @@
 
   <url>
     <loc>https://ddsportsmanagement.co.za/players.html</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -31,7 +31,7 @@
 
   <url>
     <loc>https://ddsportsmanagement.co.za/news.html</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -40,6 +40,13 @@
     <loc>https://ddsportsmanagement.co.za/contact.html</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ddsportsmanagement.co.za/news-done-deal-lindokuhle-zungu-puts-pen-to-paper-for-the-ostriches.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
 

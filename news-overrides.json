@@ -5,7 +5,8 @@
     "Titles are matched exactly, ignoring case and extra spaces.",
     "  suppress — titles to drop from the site entirely.",
     "  images   — replace a row's image with a file committed in this repo.",
-    "  extra    — posts that are not in the sheet at all.",
+    "  extra    — posts that are not in the sheet at all. Supports body[] for",
+    "             paragraphs and gallery[] for extra photos below the body.",
     "Delete an entry to hand control of that post back to the sheet."
   ],
 
@@ -23,6 +24,23 @@
   },
 
   "extra": [
+    {
+      "timestamp": "2026-07-17T09:00:00",
+      "title": "Done Deal! Lindokuhle Zungu Puts Pen to Paper for the Ostriches",
+      "category": "Transfer",
+      "date": "7/17/2026",
+      "excerpt": "Lindokuhle Zungu has signed a 1+1 deal with Orapa United in the Botswana Premier Division.",
+      "imageUrl": "local:assets/news-zungu-signing-welcome.jpeg",
+      "body": [
+        "Lindokuhle Zungu puts pen to paper for the Ostriches!",
+        "Zungu has signed a 1+1 deal with Orapa United in the Botswana Premier Division.",
+        "We extend our best wishes to Zungu for a successful season ahead."
+      ],
+      "gallery": [
+        "assets/news-zungu-signing-contract.jpeg",
+        "assets/news-zungu-signing-stands.jpeg"
+      ]
+    },
     {
       "timestamp": "2026-07-14T12:00:00",
       "title": "Project Concluded: Lyema Dopolo Completes His Season with Ongos F.C.",

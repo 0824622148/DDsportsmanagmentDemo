@@ -241,7 +241,8 @@ function loadOverrides() {
     dateRaw:   (e.date      || '').trim(),
     excerpt:   (e.excerpt   || '').trim(),
     imageUrl:  (e.imageUrl  || '').trim(),
-    body:      Array.isArray(e.body) ? e.body : null,
+    body:      Array.isArray(e.body)    ? e.body    : null,
+    gallery:   Array.isArray(e.gallery) ? e.gallery : null,
     published: '',
   })).filter(e => e.title.length > 0);
 
@@ -298,6 +299,19 @@ function bodyParagraphs(item) {
     .join('\n');
 }
 
+// Optional extra photos below the article body. Images keep their natural
+// aspect ratio: these come in portrait and landscape together, and forcing a
+// uniform tile crops whatever the photographer framed.
+function galleryHtml(item) {
+  const imgs = (item._gallery || []);
+  if (!imgs.length) return '';
+  const tiles = imgs.map((src, i) => `          <img src="${escapeHtml(src)}" alt="${escapeHtml(item.title)} — photo ${i + 2}" style="width:100%;height:auto;border-radius:var(--radius-lg);display:block;" loading="lazy" />`).join('\n');
+  return `
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--space-4);margin-top:var(--space-8);">
+${tiles}
+        </div>`;
+}
+
 function generateArticlePage(item) {
   const cat      = normaliseCategory(item.category);
   const meta     = CATEGORY[cat];
@@ -305,6 +319,7 @@ function generateArticlePage(item) {
   // Newlines in a meta description break the tag across lines; collapse them.
   const excerpt  = escapeHtml(String(item.excerpt || '').replace(/\s+/g, ' ').trim().slice(0, 300));
   const bodyHtml = bodyParagraphs(item);
+  const gallery  = galleryHtml(item);
   const date     = formatDate(item.dateRaw);
   const imgSrc   = escapeHtml(item._localImg || PLACEHOLDER);
   const bgImg    = imgSrc.startsWith('http') ? imgSrc : imgSrc;
@@ -413,7 +428,7 @@ function generateArticlePage(item) {
 
         <div style="font-size:var(--text-base);color:var(--gray-300);line-height:var(--leading-loose);display:flex;flex-direction:column;gap:var(--space-4);">
 ${bodyHtml}
-        </div>
+        </div>${gallery}
       </div>
 
       <div data-aos="fade-up" style="border-top:1px solid var(--gray-800);padding-top:var(--space-8);">
@@ -609,6 +624,15 @@ async function main() {
   if (!fs.existsSync(IMG_DIR)) fs.mkdirSync(IMG_DIR, { recursive: true });
 
   for (const item of items) {
+    // Gallery entries are repo paths only — never publish one that isn't there.
+    if (item.gallery) {
+      item._gallery = item.gallery.filter(g => {
+        const ok = fs.existsSync(path.join(ROOT, g));
+        if (!ok) console.warn(`  gallery image not found, skipping: ${g}`);
+        return ok;
+      });
+    }
+
     const imageUrl = item.imageUrl;
 
     // local: prefix — reference an already-committed asset directly
