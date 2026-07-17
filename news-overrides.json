@@ -1,0 +1,43 @@
+{
+  "_readme": [
+    "Corrections applied on top of the Google Sheet every time scripts/fetch-news.js runs.",
+    "This file wins over the sheet, so the site can be fixed here without edit access to it.",
+    "Titles are matched exactly, ignoring case and extra spaces.",
+    "  suppress — titles to drop from the site entirely.",
+    "  images   — replace a row's image with a file committed in this repo.",
+    "  extra    — posts that are not in the sheet at all.",
+    "Delete an entry to hand control of that post back to the sheet."
+  ],
+
+  "suppress": [
+    "Test",
+    "D.D Sports Management Agency is delighted to welcome Ivans Patrikejevs!",
+    "D.D Sports Management Agency Welcomes Mashiku Hans Muyeka!",
+    "Scouting News: D.D Sports Management Closely Monitoring Chukwuemeka Obioma",
+    "Congratulations to Mamelodi Sundowns and Our Client Khuliso Mudau — Sundowns Book Their Spot in the 2025/26 CAF Champions League Final"
+  ],
+
+  "images": {
+    "Lindokuhle Zungu's medicals are booked.": "assets/news-lindokuhle-zungu-medical.jpeg",
+    "Laudry Mukaba's medicals are booked.": "assets/news-laudry-mukaba-medical.jpeg"
+  },
+
+  "extra": [
+    {
+      "timestamp": "2026-07-14T12:00:00",
+      "title": "Project Concluded: Lyema Dopolo Completes His Season with Ongos F.C.",
+      "category": "Announcement",
+      "date": "7/14/2026",
+      "excerpt": "Lyema Dopolo closes his season at Ongos F.C. with 18 clean sheets in 30 matches, captaining the side to 4th place in the Namibian Premier Division.",
+      "imageUrl": "local:assets/news-lyema-dopolo-season.jpeg",
+      "body": [
+        "Lyema Dopolo has successfully completed his season with Ongos F.C. in the Namibian Premier Division, delivering an exceptional performance that included 18 clean sheets across 30 matches.",
+        "He also led the team as captain to a commendable 4th place finish within the Namibian Premier Division.",
+        "Lyema's agent, Dontè Dorlly, expressed immense satisfaction with Lyema's consistent performance throughout the season.",
+        "It is unfortunate that no awards were presented, as Lyema garnered over 10 Man of the Match accolades. We anticipate a promising future for this talented individual.",
+        "Discussions were held with clubs in the Serbian Premier Division and Belgium; however, logistical constraints prevented his timely travel for evaluations.",
+        "We are currently engaged in ongoing discussions with interested clubs within Africa and anticipate finalizing a substantive opportunity for him in the near future."
+      ]
+    }
+  ]
+}

@@ -34,6 +34,7 @@ const ROOT        = path.join(__dirname, '..');
 const IMG_DIR     = path.join(ROOT, 'assets', 'news-images');
 const INDEX_HTML  = path.join(ROOT, 'index.html');
 const NEWS_HTML   = path.join(ROOT, 'news.html');
+const OVERRIDES   = path.join(ROOT, 'news-overrides.json');
 const PLACEHOLDER = 'assets/logo/dd-logo.jpg';
 
 const MARKER_START = '<!-- INSTAGRAM-NEWS-START -->';
@@ -200,20 +201,113 @@ function rowsToItems(rows) {
   }));
 }
 
+// ── Overrides ─────────────────────────────────────────────────────────────────
+//
+// news-overrides.json lets the repo correct the sheet without needing edit
+// access to it. Titles are matched exactly, ignoring case and surrounding
+// whitespace. Shape:
+//
+//   {
+//     "suppress": ["Test"],                       // drop these rows entirely
+//     "images":   { "Some title": "assets/x.jpg" }, // replace the row's image
+//     "extra":    [ { title, category, date, excerpt, body[], imageUrl,
+//                     timestamp } ]               // posts the sheet lacks
+//   }
+//
+// Anything here wins over the sheet. Remove an entry and the sheet takes over
+// again on the next run.
+
+const normTitle = s => String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+
+function loadOverrides() {
+  const empty = { suppress: new Set(), images: new Map(), extra: [] };
+  if (!fs.existsSync(OVERRIDES)) return empty;
+
+  let raw;
+  try {
+    raw = JSON.parse(fs.readFileSync(OVERRIDES, 'utf8'));
+  } catch (err) {
+    // A malformed overrides file must not silently publish suppressed posts.
+    console.error('news-overrides.json is not valid JSON: ' + err.message);
+    process.exit(1);
+  }
+
+  const suppress = new Set((raw.suppress || []).map(normTitle));
+  const images   = new Map(Object.entries(raw.images || {}).map(([k, v]) => [normTitle(k), v]));
+  const extra    = (raw.extra || []).map(e => ({
+    timestamp: (e.timestamp || '').trim(),
+    title:     (e.title     || '').trim(),
+    category:  (e.category  || '').trim(),
+    dateRaw:   (e.date      || '').trim(),
+    excerpt:   (e.excerpt   || '').trim(),
+    imageUrl:  (e.imageUrl  || '').trim(),
+    body:      Array.isArray(e.body) ? e.body : null,
+    published: '',
+  })).filter(e => e.title.length > 0);
+
+  return { suppress, images, extra };
+}
+
+function applyOverrides(items, ov) {
+  const kept = items.filter(item => {
+    if (ov.suppress.has(normTitle(item.title))) {
+      console.log(`  suppressed by overrides: "${item.title}"`);
+      return false;
+    }
+    return true;
+  });
+
+  for (const item of kept) {
+    const img = ov.images.get(normTitle(item.title));
+    if (img) {
+      // Route through the existing local:/URL handling below.
+      item.imageUrl = /^https?:/.test(img) ? img : 'local:' + img;
+      console.log(`  image overridden for "${item.title}" -> ${img}`);
+    }
+  }
+
+  for (const e of ov.extra) {
+    if (kept.some(i => normTitle(i.title) === normTitle(e.title))) {
+      console.log(`  extra "${e.title}" also came from the sheet — using the sheet row`);
+      continue;
+    }
+    kept.push(e);
+    console.log(`  added from overrides: "${e.title}"`);
+  }
+
+  return kept;
+}
+
 // ── Article page generator ────────────────────────────────────────────────────
 
 function articleFilename(item) {
   return `news-${slugify(item.title)}.html`;
 }
 
+// Article body: an explicit body[] from the overrides file, otherwise the
+// excerpt split on blank lines. Form submissions often contain several
+// paragraphs, which used to render as one run-on <p>.
+function bodyParagraphs(item) {
+  const source = item.body && item.body.length
+    ? item.body
+    : String(item.excerpt || '').split(/\r?\n\s*\r?\n/);
+  return source
+    .map(s => String(s).trim())
+    .filter(Boolean)
+    .map(s => `          <p>${escapeHtml(s).replace(/\r?\n/g, '<br />')}</p>`)
+    .join('\n');
+}
+
 function generateArticlePage(item) {
-  const cat     = normaliseCategory(item.category);
-  const meta    = CATEGORY[cat];
-  const title   = escapeHtml(item.title);
-  const excerpt = escapeHtml(item.excerpt);
-  const date    = formatDate(item.dateRaw);
-  const imgSrc  = escapeHtml(item._localImg || PLACEHOLDER);
-  const bgImg   = imgSrc.startsWith('http') ? imgSrc : imgSrc;
+  const cat      = normaliseCategory(item.category);
+  const meta     = CATEGORY[cat];
+  const title    = escapeHtml(item.title);
+  // Newlines in a meta description break the tag across lines; collapse them.
+  const excerpt  = escapeHtml(String(item.excerpt || '').replace(/\s+/g, ' ').trim().slice(0, 300));
+  const bodyHtml = bodyParagraphs(item);
+  const date     = formatDate(item.dateRaw);
+  const imgSrc   = escapeHtml(item._localImg || PLACEHOLDER);
+  const bgImg    = imgSrc.startsWith('http') ? imgSrc : imgSrc;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -317,8 +411,8 @@ function generateArticlePage(item) {
 
         <img src="${imgSrc}" alt="${title}" style="width:100%;border-radius:var(--radius-xl);margin-bottom:var(--space-8);object-fit:cover;max-height:480px;" loading="lazy" />
 
-        <div style="font-size:var(--text-base);color:var(--gray-300);line-height:var(--leading-loose);">
-          <p>${excerpt}</p>
+        <div style="font-size:var(--text-base);color:var(--gray-300);line-height:var(--leading-loose);display:flex;flex-direction:column;gap:var(--space-4);">
+${bodyHtml}
         </div>
       </div>
 
@@ -391,13 +485,18 @@ function generateArticlePage(item) {
 
 // ── Card HTML generators ──────────────────────────────────────────────────────
 
+// A card is a fixed-height teaser: collapse any newlines from the form
+// submission before truncating, or the card breaks mid-paragraph.
+function cardExcerpt(item) {
+  const flat = String(item.excerpt || '').replace(/\s+/g, ' ').trim();
+  return escapeHtml(flat.length > 160 ? flat.slice(0, 157) + '…' : flat);
+}
+
 function homeCard(item, index) {
   const cat    = normaliseCategory(item.category);
   const meta   = CATEGORY[cat];
   const title  = escapeHtml(item.title);
-  const excerpt = escapeHtml(
-    item.excerpt.length > 160 ? item.excerpt.slice(0, 157) + '…' : item.excerpt
-  );
+  const excerpt = cardExcerpt(item);
   const date   = formatDate(item.dateRaw);
   const imgSrc = escapeHtml(item._localImg || PLACEHOLDER);
   const delay  = index * 100;
@@ -423,9 +522,7 @@ function newsCard(item, index) {
   const cat    = normaliseCategory(item.category);
   const meta   = CATEGORY[cat];
   const title  = escapeHtml(item.title);
-  const excerpt = escapeHtml(
-    item.excerpt.length > 160 ? item.excerpt.slice(0, 157) + '…' : item.excerpt
-  );
+  const excerpt = cardExcerpt(item);
   const date   = formatDate(item.dateRaw);
   const imgSrc = escapeHtml(item._localImg || PLACEHOLDER);
   const delay  = (index % 3) * 100;
@@ -495,6 +592,9 @@ async function main() {
   let items = rowsToItems(rows)
     .filter(item => item.title.length > 0)
     .filter(item => item.published !== 'no');
+
+  const overrides = loadOverrides();
+  items = applyOverrides(items, overrides);
 
   if (items.length === 0) {
     console.log('No publishable items found — skipping HTML update.');
