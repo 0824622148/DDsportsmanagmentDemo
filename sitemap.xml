@@ -31,7 +31,7 @@
 
   <url>
     <loc>https://ddsportsmanagement.co.za/news.html</loc>
-    <lastmod>2026-07-17</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -40,6 +40,13 @@
     <loc>https://ddsportsmanagement.co.za/contact.html</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ddsportsmanagement.co.za/news-transfer-news-laudry-mukaba-signs-a-two-year-deal-with-sua-flamingoes.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
 
