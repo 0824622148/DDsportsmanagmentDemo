@@ -25,6 +25,18 @@
 
   "extra": [
     {
+      "timestamp": "2026-07-25T09:00:00",
+      "title": "Zungu Out!",
+      "category": "Announcement",
+      "date": "7/25/2026",
+      "excerpt": "D.D Sports Management Agency has terminated Lindokuhle Zungu's contract with the agency, effective immediately.",
+      "imageUrl": "local:assets/news-zungu-out.jpeg",
+      "body": [
+        "D.D Sports Management Agency has terminated Lindokuhle Zungu's contract with the agency, effective immediately.",
+        "Dontè Dorlly: \"Success does not change who you are; it only reveals it. You traded our loyalty for a quick win.\""
+      ]
+    },
+    {
       "timestamp": "2026-07-18T09:00:00",
       "title": "Congolese Marksman Laudry Mukaba Inks New Deal!",
       "category": "Transfer",
