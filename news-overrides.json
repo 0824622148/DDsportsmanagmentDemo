@@ -25,6 +25,106 @@
 
   "extra": [
     {
+      "timestamp": "2026-08-17T23:00:00",
+      "title": "Deal Locked In! Rayhan El Grafel Signs Two-Year Deal with RWDM",
+      "category": "Transfer",
+      "date": "8/17/2026",
+      "excerpt": "Rayhan El Grafel has signed a two-year deal with RWDM, stepping up from Beerschot U21 as the Belgian side push for promotion.",
+      "imageUrl": "local:assets/news-rayhan-el-grafel-rwdm.jpeg",
+      "body": [
+        "Deal locked in! Rayhan El Grafel has officially signed a two-year deal with RWDM.",
+        "After a dominant stint with Beerschot U21, the rising star is heading to the Belgian third division.",
+        "RWDM are hunting hard for promotion after an unfortunate relegation, and El Grafel is exactly the weapon they need to fight their way back to the top.",
+        "Remember the name: El Grafel. Huge potential for greatness. The journey starts now!"
+      ],
+      "gallery": [
+        "assets/news-rayhan-el-grafel-shirt.jpeg",
+        "assets/news-rayhan-el-grafel-stands.jpeg"
+      ]
+    },
+    {
+      "timestamp": "2026-08-17T21:00:00",
+      "title": "Remember the Name: Samuel Tabares Signs for Gillingham FC",
+      "category": "Transfer",
+      "date": "8/17/2026",
+      "excerpt": "Young defender Samuel Tabares has signed for Gillingham FC after development years at Fulham U21 and Southampton U21.",
+      "imageUrl": "local:assets/news-samuel-tabares-gillingham.jpeg",
+      "body": [
+        "Remember the name: Samuel Tabares.",
+        "The highly talented young defender has officially put pen to paper with Gillingham FC.",
+        "Following impressive development years at Fulham U21 and Southampton U21, this move to League Two is the perfect launchpad for his senior career.",
+        "With his sights firmly set on a future in the Premier League, there is no doubt he is on the path to greatness."
+      ],
+      "gallery": [
+        "assets/news-samuel-tabares-signing.jpeg",
+        "assets/news-samuel-tabares-portrait.jpeg"
+      ]
+    },
+    {
+      "timestamp": "2026-08-17T18:00:00",
+      "title": "Liberian Marksman on the Move! Rufus Sackie Jr Joins African Stars",
+      "category": "Transfer",
+      "date": "8/17/2026",
+      "excerpt": "Rufus Sackie Jr has completed his transfer to Namibian giants African Stars F.C., bringing 49 goal contributions in 63 games to the Namibian top flight.",
+      "imageUrl": "local:assets/news-rufus-sackie-african-stars.jpeg",
+      "body": [
+        "Liberian marksman on the move! Rufus Sackie Jr has officially completed his transfer to Namibian giants African Stars F.C. ahead of their massive CAF Champions League campaign.",
+        "With an incredible record of 41 goals and 8 assists in just 63 games, the Liberian international is primed to take the Namibian top flight by storm.",
+        "But the club level isn't his only target — Rufus has his eyes firmly set on representing Liberia at the 2027 Africa Cup of Nations.",
+        "Welcome our new marksman to D.D Sports Management Agency."
+      ],
+      "gallery": [
+        "assets/news-rufus-sackie-stats.jpeg",
+        "assets/news-rufus-sackie-celebration.jpeg",
+        "assets/news-rufus-sackie-cosmos.jpeg"
+      ]
+    },
+    {
+      "timestamp": "2026-08-17T15:00:00",
+      "title": "The Congolese Sniper Is Locked and Loaded",
+      "category": "Announcement",
+      "date": "8/17/2026",
+      "excerpt": "Ten goal contributions in just eight pre-season games — Laudry Mukaba is locked and loaded ahead of a massive season with Sua Flamingoes.",
+      "imageUrl": "local:assets/news-laudry-mukaba-preseason.jpeg",
+      "body": [
+        "The Congolese Sniper is locked and loaded.",
+        "Laudry Mukaba is absolutely tearing up the pre-season. Ten goal contributions in just eight games is an unbelievable stat line for the young international.",
+        "The hard work is paying off and this is only the beginning of a massive season ahead. Remember the name."
+      ]
+    },
+    {
+      "timestamp": "2026-08-17T12:00:00",
+      "title": "The Big Move Is Confirmed! Lyema Dopolo Joins African Stars",
+      "category": "Transfer",
+      "date": "8/17/2026",
+      "excerpt": "Lyema Dopolo is officially a Namibia Giant — the defender is en route to African Stars F.C. ahead of their CAF Champions League campaign.",
+      "imageUrl": "local:assets/news-lyema-dopolo-african-stars.jpeg",
+      "body": [
+        "The big move is confirmed! Lyema Dopolo is officially a Namibia Giant, en route to African Stars F.C.",
+        "Lyema is taking his game to the absolute highest level in African football as the team gears up for the CAF Champions League.",
+        "African Stars have been drawn against AS Mangasport in the first preliminary round, with the tie scheduled for 4–6 September 2026.",
+        "Big stage. Big ambitions. Ready to shine."
+      ],
+      "gallery": [
+        "assets/news-lyema-dopolo-caf-fixture.jpeg"
+      ]
+    },
+    {
+      "timestamp": "2026-08-17T09:00:00",
+      "title": "Jacob Everson Joins BDF XI",
+      "category": "Transfer",
+      "date": "8/17/2026",
+      "excerpt": "Jacob Everson has finalised a season-long loan move to BDF XI in the Botswana Premier Division.",
+      "imageUrl": "local:assets/news-jacob-everson-bdf-loan.jpeg",
+      "body": [
+        "We can confirm that Jacob Everson has finalised a season-long loan move to BDF XI in the Botswana Premier Division.",
+        "We are excited to see Jacob gain valuable first-team minutes and continue his development on the big stage. Go get 'em, Jacob."
+      ],
+      "gallery": [
+        "assets/news-jacob-everson-bdf-action.jpeg"
+      ]
+    },
+    {
       "timestamp": "2026-07-25T09:00:00",
       "title": "Zungu Out!",
       "category": "Announcement",
