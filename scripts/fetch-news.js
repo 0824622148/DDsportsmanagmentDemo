@@ -27,7 +27,8 @@ const fs    = require('fs');
 const path  = require('path');
 
 const SHEET_CSV_URL = process.env.GOOGLE_SHEET_CSV_URL;
-const HOME_LIMIT    = parseInt(process.env.HOME_LIMIT || '3',  10);
+// Six fills two clean rows of the home page's 3-column news grid.
+const HOME_LIMIT    = parseInt(process.env.HOME_LIMIT || '6',  10);
 const NEWS_LIMIT    = parseInt(process.env.NEWS_LIMIT || '20', 10);
 
 const ROOT        = path.join(__dirname, '..');
