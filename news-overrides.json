@@ -25,6 +25,24 @@
 
   "extra": [
     {
+      "timestamp": "2026-08-23T09:00:00",
+      "title": "Welcome Aristote Tamuzi to the D.D Sports Management Family!",
+      "category": "Announcement",
+      "date": "8/23/2026",
+      "excerpt": "We're thrilled to officially welcome centre-back Aristote Tamuzi to the D.D Sports Management family!",
+      "imageUrl": "local:assets/news-aristote-tamuzi-welcome.jpeg",
+      "body": [
+        "We're thrilled to officially welcome Aristote Tamuzi (Aristote Ntangu Tamuzi) to D.D Sports Management Agency!",
+        "The 26-year-old centre-back from Kinshasa, DR Congo (born 13 August 1999), stands tall at 1.88m and brings solid defensive quality, composure, and experience from his time with Mbabane Highlanders and AS New Soger.",
+        "We're excited to partner with Aristote and support him as he continues to develop and reach new heights in his career. The journey continues — and we're here every step of the way.",
+        "Welcome to the family, Aristote! Let's go to work."
+      ],
+      "gallery": [
+        "assets/news-aristote-tamuzi-action.jpeg",
+        "assets/news-aristote-tamuzi-duel.jpeg"
+      ]
+    },
+    {
       "timestamp": "2026-08-17T23:00:00",
       "title": "Deal Locked In! Rayhan El Grafel Signs Two-Year Deal with RWDM",
       "category": "Transfer",
