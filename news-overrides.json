@@ -25,6 +25,24 @@
 
   "extra": [
     {
+      "timestamp": "2026-08-23T10:00:00",
+      "title": "Welcome Naledi Kgobe to the D.D Sports Management Family!",
+      "category": "Announcement",
+      "date": "8/23/2026",
+      "excerpt": "We're excited to officially welcome Naledi Kgobe from the Mamelodi Sundowns F.C. Academy to the D.D Sports Management family!",
+      "imageUrl": "local:assets/news-naledi-kgobe-welcome.jpeg",
+      "body": [
+        "We're excited to officially welcome Naledi Kgobe from the prestigious Mamelodi Sundowns F.C. Academy to D.D Sports Management Agency!",
+        "Coming through one of South Africa's strongest development pipelines, Naledi represents the next generation of talent with the potential to go far. We're proud to partner with this rising star and look forward to supporting his journey every step of the way.",
+        "Welcome to the family, Naledi! The future is bright — let's build it together."
+      ],
+      "gallery": [
+        "assets/news-naledi-kgobe-action1.jpeg",
+        "assets/news-naledi-kgobe-action2.jpeg",
+        "assets/news-naledi-kgobe-portrait.jpeg"
+      ]
+    },
+    {
       "timestamp": "2026-08-23T09:00:00",
       "title": "Welcome Aristote Tamuzi to the D.D Sports Management Family!",
       "category": "Announcement",
