@@ -244,6 +244,7 @@ function loadOverrides() {
     imageUrl:  (e.imageUrl  || '').trim(),
     body:      Array.isArray(e.body)    ? e.body    : null,
     gallery:   Array.isArray(e.gallery) ? e.gallery : null,
+    video:     Array.isArray(e.video)   ? e.video   : null,
     published: '',
   })).filter(e => e.title.length > 0);
 
@@ -313,6 +314,19 @@ ${tiles}
         </div>`;
 }
 
+// Optional short clips below the article body. These come in as portrait
+// phone videos, so the columns are capped rather than stretched full-width,
+// and centred. Missing files are skipped rather than published as broken.
+function videoHtml(item) {
+  const vids = (item._video || []);
+  if (!vids.length) return '';
+  const tiles = vids.map(src => `          <video controls preload="metadata" playsinline style="width:100%;height:auto;border-radius:var(--radius-lg);display:block;background:#000;"><source src="${escapeHtml(src)}" type="video/mp4" />Your browser does not support embedded video.</video>`).join('\n');
+  return `
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,300px));gap:var(--space-4);margin-top:var(--space-8);justify-content:center;">
+${tiles}
+        </div>`;
+}
+
 function generateArticlePage(item) {
   const cat      = normaliseCategory(item.category);
   const meta     = CATEGORY[cat];
@@ -321,6 +335,7 @@ function generateArticlePage(item) {
   const excerpt  = escapeHtml(String(item.excerpt || '').replace(/\s+/g, ' ').trim().slice(0, 300));
   const bodyHtml = bodyParagraphs(item);
   const gallery  = galleryHtml(item);
+  const video    = videoHtml(item);
   const date     = formatDate(item.dateRaw);
   const imgSrc   = escapeHtml(item._localImg || PLACEHOLDER);
   const bgImg    = imgSrc.startsWith('http') ? imgSrc : imgSrc;
@@ -429,7 +444,7 @@ function generateArticlePage(item) {
 
         <div style="font-size:var(--text-base);color:var(--gray-300);line-height:var(--leading-loose);display:flex;flex-direction:column;gap:var(--space-4);">
 ${bodyHtml}
-        </div>${gallery}
+        </div>${gallery}${video}
       </div>
 
       <div data-aos="fade-up" style="border-top:1px solid var(--gray-800);padding-top:var(--space-8);">
@@ -630,6 +645,15 @@ async function main() {
       item._gallery = item.gallery.filter(g => {
         const ok = fs.existsSync(path.join(ROOT, g));
         if (!ok) console.warn(`  gallery image not found, skipping: ${g}`);
+        return ok;
+      });
+    }
+
+    // Video entries are repo paths only — never publish one that isn't there.
+    if (item.video) {
+      item._video = item.video.filter(v => {
+        const ok = fs.existsSync(path.join(ROOT, v));
+        if (!ok) console.warn(`  video not found, skipping: ${v}`);
         return ok;
       });
     }
