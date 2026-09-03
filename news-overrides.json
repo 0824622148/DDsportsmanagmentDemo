@@ -25,6 +25,23 @@
 
   "extra": [
     {
+      "timestamp": "2026-09-03T09:00:00",
+      "title": "Welcome Azeez Falolu to the D.D Sports Management Family!",
+      "category": "Announcement",
+      "date": "9/3/2026",
+      "excerpt": "D.D Sports Management Agency is proud to announce a new partnership with NPFL midfield dynamo Azeez Falolu, the 22-year-old Enugu Rangers midfielder.",
+      "imageUrl": "local:assets/news-azeez-falolu-welcome.jpeg",
+      "body": [
+        "D.D Sports Management Agency is proud to announce an exciting new partnership, officially joining forces with one of Nigerian football’s most promising talents, midfield dynamo Azeez Falolu.",
+        "Falolu is a highly gifted 22-year-old central midfielder known across the Nigeria Premier Football League (NPFL) for his incredible work rate, tactical vision, and relentless energy. After establishing himself as a standout performer for Katsina United, his rising profile caught the attention of the reigning NPFL champions, Enugu Rangers, who secured his signature in August 2026. Capable of dictating play or disrupting opposition attacks, he made an immediate impression with a dominant performance during his competitive debut for the Flying Antelopes.",
+        "At D.D Sports Management Agency, our mission is to provide the elite support system and global network necessary to turn raw potential into world-class success. Falolu already possesses the grit, intelligence, and hunger to succeed. Together, we look forward to unlocking international opportunities, elevating his career, and taking his immense talents all the way to the stars.",
+        "Welcome to the family, Azeez!"
+      ],
+      "gallery": [
+        "assets/news-azeez-falolu-action.jpeg"
+      ]
+    },
+    {
       "timestamp": "2026-09-01T09:00:00",
       "title": "D.D Sports Management Agency Signs Exciting Nigerian Prospect Taofeek Otaniyi",
       "category": "Announcement",
