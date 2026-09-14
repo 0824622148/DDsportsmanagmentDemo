@@ -327,6 +327,10 @@ ${tiles}
         </div>`;
 }
 
+// The lead image is sized to the photo, not the other way round. These arrive
+// portrait (phone shots) and landscape (branded graphics) together, so a fixed
+// height with object-fit:cover beheaded the portraits. Height is capped instead
+// and the box follows the aspect ratio, matching galleryHtml above.
 function generateArticlePage(item) {
   const cat      = normaliseCategory(item.category);
   const meta     = CATEGORY[cat];
@@ -440,7 +444,7 @@ function generateArticlePage(item) {
           ${title}
         </h1>
 
-        <img src="${imgSrc}" alt="${title}" style="width:100%;border-radius:var(--radius-xl);margin-bottom:var(--space-8);object-fit:cover;max-height:480px;" loading="lazy" />
+        <img src="${imgSrc}" alt="${title}" style="display:block;width:auto;max-width:100%;max-height:560px;margin:0 auto var(--space-8);border-radius:var(--radius-xl);" loading="lazy" />
 
         <div style="font-size:var(--text-base);color:var(--gray-300);line-height:var(--leading-loose);display:flex;flex-direction:column;gap:var(--space-4);">
 ${bodyHtml}
