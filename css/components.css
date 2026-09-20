@@ -2015,6 +2015,9 @@
    .news-card-img / .news-featured-img rules above on specificity, not order. */
 .news-card-img img[src*="news-lindokuhle-zungu-medical"],
 .news-featured-img img[src*="news-lindokuhle-zungu-medical"],
-img[src*="news-lindokuhle-zungu-medical"] {
+img[src*="news-lindokuhle-zungu-medical"],
+.news-card-img img[src*="news-laudry-mukaba-first-goal"],
+.news-featured-img img[src*="news-laudry-mukaba-first-goal"],
+img[src*="news-laudry-mukaba-first-goal"] {
   object-position: center top;
 }
