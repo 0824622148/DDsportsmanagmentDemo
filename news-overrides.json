@@ -25,6 +25,27 @@
 
   "extra": [
     {
+      "timestamp": "2026-10-06T09:00:00",
+      "title": "Mpho “Tyson” Maila Is Here!",
+      "category": "Announcement",
+      "date": "10/6/2026",
+      "excerpt": "We’re delighted to announce the signing of 19-year-old centre-back Mpho Maila, a Mamelodi Sundowns Academy product now with Lamontville Golden Arrows.",
+      "imageUrl": "local:assets/news-mpho-maila-welcome.jpeg",
+      "body": [
+        "We’re delighted to announce the signing of exciting young central defender Mpho Maila.",
+        "Born in Pretoria on 8 February 2007, the 19-year-old centre-back arrives with a strong foundation and clear upward trajectory. A product of the renowned Mamelodi Sundowns Academy, Maila has already shown the composure, physical presence and defensive instincts that mark out players who can go far in the professional game.",
+        "Most recently he has been sharpening his craft at Lamontville Golden Arrows, where he featured regularly for the Diski side and made his debut in September 2025. Known as “Tyson” among teammates, he brings energy, commitment and a no-nonsense approach to defending that supporters will quickly come to appreciate.",
+        "At just 19, Maila still has significant room to grow, but the foundations are already solid: good reading of the game, a willingness to put his body on the line, and the technical grounding that comes from one of South Africa’s elite development systems. We believe this is the right environment for him to take the next step and push for regular first-team football.",
+        "Welcome to the family, Mpho. The hard work starts now — and we can’t wait to see you in our colours."
+      ],
+      "gallery": [
+        "assets/news-mpho-maila-arrows.jpeg",
+        "assets/news-mpho-maila-tackle.jpeg",
+        "assets/news-mpho-maila-sundowns.jpeg",
+        "assets/news-mpho-maila-academy.jpeg"
+      ]
+    },
+    {
       "timestamp": "2026-09-20T09:00:00",
       "title": "The Congolese Super Striker Finds the Back of the Net!",
       "category": "Announcement",

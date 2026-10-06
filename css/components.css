@@ -2018,6 +2018,9 @@
 img[src*="news-lindokuhle-zungu-medical"],
 .news-card-img img[src*="news-laudry-mukaba-first-goal"],
 .news-featured-img img[src*="news-laudry-mukaba-first-goal"],
-img[src*="news-laudry-mukaba-first-goal"] {
+img[src*="news-laudry-mukaba-first-goal"],
+.news-card-img img[src*="news-mpho-maila-welcome"],
+.news-featured-img img[src*="news-mpho-maila-welcome"],
+img[src*="news-mpho-maila-welcome"] {
   object-position: center top;
 }
