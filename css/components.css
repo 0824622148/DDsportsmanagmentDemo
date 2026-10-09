@@ -2021,6 +2021,9 @@ img[src*="news-lindokuhle-zungu-medical"],
 img[src*="news-laudry-mukaba-first-goal"],
 .news-card-img img[src*="news-mpho-maila-welcome"],
 .news-featured-img img[src*="news-mpho-maila-welcome"],
-img[src*="news-mpho-maila-welcome"] {
+img[src*="news-mpho-maila-welcome"],
+.news-card-img img[src*="news-tshidiso-motingoe-scout"],
+.news-featured-img img[src*="news-tshidiso-motingoe-scout"],
+img[src*="news-tshidiso-motingoe-scout"] {
   object-position: center top;
 }
