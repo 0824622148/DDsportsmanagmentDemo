@@ -115,6 +115,10 @@
   width: 100%;
 }
 
+@media (max-width: 1200px) {
+  .navbar-links { gap: var(--space-6); }
+}
+
 /* Nav CTA */
 .navbar-cta {
   display: flex;

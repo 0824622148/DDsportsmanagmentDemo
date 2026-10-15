@@ -378,6 +378,7 @@ function generateArticlePage(item) {
       <ul class="navbar-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="staff.html">Staff</a></li>
         <li><a href="players.html">Players</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="news.html">News</a></li>
@@ -396,6 +397,7 @@ function generateArticlePage(item) {
     <ul class="mobile-nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="staff.html">Staff</a></li>
       <li><a href="players.html">Players</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="news.html">News</a></li>
@@ -479,6 +481,7 @@ ${bodyHtml}
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
+            <li><a href="staff.html">Staff</a></li>
             <li><a href="players.html">Players</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="news.html">News</a></li>
