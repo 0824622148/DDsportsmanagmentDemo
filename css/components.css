@@ -1090,6 +1090,86 @@
 
 
 /* ════════════════════════════════════════════
+   CATEGORY SWITCH (Players)
+   ════════════════════════════════════════════ */
+
+.category-switch-wrap {
+  background: var(--navy-900);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-6) var(--space-6) 0;
+  display: flex;
+  justify-content: center;
+}
+
+.category-switch {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.category-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-8);
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--gray-400);
+  background: transparent;
+  border-bottom: 3px solid transparent;
+  transition: color var(--duration-base), border-color var(--duration-base);
+}
+
+.category-tab i { color: var(--gray-600); transition: color var(--duration-base); }
+
+.category-tab:hover { color: var(--white); }
+
+.category-tab.active {
+  color: var(--white);
+  border-bottom-color: var(--gold-500);
+}
+
+.category-tab.active i { color: var(--gold-500); }
+
+@media (max-width: 640px) {
+  .category-switch-wrap { padding: var(--space-4) var(--space-4) 0; }
+  .category-switch { width: 100%; }
+  .category-tab {
+    flex: 1;
+    justify-content: center;
+    padding: var(--space-3) var(--space-2);
+    font-size: var(--text-sm);
+    gap: var(--space-2);
+  }
+}
+
+.players-empty {
+  text-align: center;
+  padding: var(--space-16) var(--space-6);
+  color: var(--gray-400);
+}
+
+.players-empty i {
+  font-size: 2.5rem;
+  color: var(--gold-500);
+  margin-bottom: var(--space-4);
+}
+
+.players-empty h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  color: var(--white);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.players-empty p { font-size: var(--text-sm); }
+
+
+/* ════════════════════════════════════════════
    FILTER BAR (Players)
    ════════════════════════════════════════════ */
 

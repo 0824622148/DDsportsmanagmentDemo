@@ -9,11 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.querySelector('#player-search');
   const loadMoreBtn = document.querySelector('#load-more-btn');
   const countBadge  = document.querySelector('#visible-count');
+  const categoryTabs = document.querySelectorAll('.category-tab');
+  const emptyState  = document.querySelector('#players-empty');
 
   if (!grid) return;
 
   const allCards  = Array.from(grid.querySelectorAll('.player-card'));
   const VISIBLE   = 12;
+  let currentCategory = location.hash === '#development' ? 'development' : 'professional';
   let currentFilter = 'all';
   let currentSearch = '';
   let showAll = false;
@@ -22,9 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     return allCards.filter(card => {
       const pos   = card.dataset.position || '';
       const name  = (card.dataset.name || '').toLowerCase();
+      const matchCategory = (card.dataset.category || 'professional') === currentCategory;
       const matchFilter = currentFilter === 'all' || pos === currentFilter;
       const matchSearch = !currentSearch || name.includes(currentSearch);
-      return matchFilter && matchSearch;
+      return matchCategory && matchFilter && matchSearch;
     });
   };
 
@@ -48,6 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
       countBadge.textContent = visible.length;
     }
 
+    // Empty state (e.g. no development players yet)
+    if (emptyState) {
+      const inCategory = allCards.some(card => (card.dataset.category || 'professional') === currentCategory);
+      emptyState.classList.toggle('hidden', inCategory);
+    }
+
     // Load more button visibility
     if (loadMoreBtn) {
       if (visible.length > VISIBLE && !showAll) {
@@ -57,7 +67,32 @@ document.addEventListener('DOMContentLoaded', () => {
         loadMoreBtn.classList.add('hidden');
       }
     }
+
+    // AOS measured card offsets before filtering; re-measure so cards that
+    // moved up the grid animate in instead of waiting for a scroll.
+    if (window.AOS) AOS.refresh();
   };
+
+  /* ── CATEGORY TABS ── */
+  const setCategory = (category) => {
+    currentCategory = category;
+    categoryTabs.forEach(t => {
+      const isActive = t.dataset.category === category;
+      t.classList.toggle('active', isActive);
+      t.setAttribute('aria-selected', String(isActive));
+    });
+  };
+
+  categoryTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      setCategory(tab.dataset.category);
+      history.replaceState(null, '', currentCategory === 'development' ? '#development' : location.pathname);
+      showAll = false;
+      render();
+    });
+  });
+
+  setCategory(currentCategory);
 
   /* ── FILTER TABS ── */
   filterTabs.forEach(tab => {

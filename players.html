@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="D.D Sports Management Agency player roster — browse our represented players by position." />
+  <meta name="description" content="D.D Sports Management Agency player roster — browse our professional and development players by position." />
   <title>Players — D.D Sports Management Agency</title>
 
   <link rel="icon" type="image/jpeg" href="assets/logo/dd-logo.jpg" />
@@ -82,6 +82,19 @@
   </header>
 
 
+  <!-- CATEGORY SWITCH -->
+  <div class="category-switch-wrap">
+    <div class="category-switch" role="tablist" aria-label="Player category">
+      <button class="category-tab active" data-category="professional" role="tab" aria-selected="true">
+        <i class="fa-solid fa-trophy"></i> Professional Players
+      </button>
+      <button class="category-tab" data-category="development" role="tab" aria-selected="false">
+        <i class="fa-solid fa-seedling"></i> Development Players
+      </button>
+    </div>
+  </div>
+
+
   <!-- FILTER BAR -->
   <div class="filter-bar" role="search">
     <div class="filter-bar-inner">
@@ -106,7 +119,7 @@
       <div class="players-grid" id="players-grid">
 
         <!-- DEF 1 — Cheick Oumar Konaté -->
-        <article class="player-card" data-position="defender" data-name="cheick oumar konate" data-aos="fade-up" data-aos-delay="0">
+        <article class="player-card" data-category="professional" data-position="defender" data-name="cheick oumar konate" data-aos="fade-up" data-aos-delay="0">
           <img class="player-card-img" src="assets/players/Cheick Oumar Konate.jpeg" alt="Cheick Oumar Konaté" loading="lazy" />
           <div class="player-card-overlay"></div>
           <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
@@ -117,7 +130,7 @@
         </article>
 
         <!-- DEF 2 — Lyema Dopolo -->
-        <article class="player-card" data-position="defender" data-name="lyema dopolo" data-aos="fade-up" data-aos-delay="0">
+        <article class="player-card" data-category="professional" data-position="defender" data-name="lyema dopolo" data-aos="fade-up" data-aos-delay="0">
           <img class="player-card-img" src="assets/players/Lyema Dopolo.jpeg" alt="Lyema Dopolo" loading="lazy" />
           <div class="player-card-overlay"></div>
           <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
@@ -128,7 +141,7 @@
         </article>
 
         <!-- DEF 3 — Aristote Tamuzi -->
-        <article class="player-card" data-position="defender" data-name="aristote tamuzi" data-aos="fade-up" data-aos-delay="0">
+        <article class="player-card" data-category="professional" data-position="defender" data-name="aristote tamuzi" data-aos="fade-up" data-aos-delay="0">
           <img class="player-card-img" src="assets/players/Aristote Tamuzi.jpeg" alt="Aristote Tamuzi" loading="lazy" />
           <div class="player-card-overlay"></div>
           <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
@@ -139,7 +152,7 @@
         </article>
 
         <!-- DEF 4 — Naledi Kgobe -->
-        <article class="player-card" data-position="defender" data-name="naledi kgobe" data-aos="fade-up" data-aos-delay="0">
+        <article class="player-card" data-category="professional" data-position="defender" data-name="naledi kgobe" data-aos="fade-up" data-aos-delay="0">
           <img class="player-card-img" src="assets/players/Naledi Kgobe.jpeg" alt="Naledi Kgobe" loading="lazy" />
           <div class="player-card-overlay"></div>
           <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
@@ -150,7 +163,7 @@
         </article>
 
         <!-- DEF 5 — Mpho Maila -->
-        <article class="player-card" data-position="defender" data-name="mpho maila" data-aos="fade-up" data-aos-delay="0">
+        <article class="player-card" data-category="professional" data-position="defender" data-name="mpho maila" data-aos="fade-up" data-aos-delay="0">
           <img class="player-card-img" src="assets/players/Mpho Maila.jpeg" alt="Mpho Maila" loading="lazy" />
           <div class="player-card-overlay"></div>
           <div class="player-card-badge"><span class="badge badge-navy">DEF</span></div>
@@ -161,7 +174,7 @@
         </article>
 
         <!-- MID 1 — Derrick Owusu -->
-        <article class="player-card" data-position="midfielder" data-name="derrick owusu" data-aos="fade-up" data-aos-delay="0">
+        <article class="player-card" data-category="professional" data-position="midfielder" data-name="derrick owusu" data-aos="fade-up" data-aos-delay="0">
           <img class="player-card-img" src="assets/players/Derrick Owusu.jpeg" alt="Derrick Owusu" loading="lazy" />
           <div class="player-card-overlay"></div>
           <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
@@ -172,7 +185,7 @@
         </article>
 
         <!-- MID 2 — Jacob Everson -->
-        <article class="player-card" data-position="midfielder" data-name="jacob everson" data-aos="fade-up" data-aos-delay="80">
+        <article class="player-card" data-category="professional" data-position="midfielder" data-name="jacob everson" data-aos="fade-up" data-aos-delay="80">
           <img class="player-card-img" src="assets/players/Jacob Everson .jpeg" alt="Jacob Everson" loading="lazy" />
           <div class="player-card-overlay"></div>
           <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
@@ -183,7 +196,7 @@
         </article>
 
         <!-- MID 3 — Taofeek Otaniyi -->
-        <article class="player-card" data-position="midfielder" data-name="taofeek otaniyi" data-aos="fade-up" data-aos-delay="160">
+        <article class="player-card" data-category="professional" data-position="midfielder" data-name="taofeek otaniyi" data-aos="fade-up" data-aos-delay="160">
           <img class="player-card-img" src="assets/players/Taofeek Otaniyi.jpeg" alt="Taofeek Otaniyi" loading="lazy" />
           <div class="player-card-overlay"></div>
           <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
@@ -194,7 +207,7 @@
         </article>
 
         <!-- MID 4 — Azeez Falolu -->
-        <article class="player-card" data-position="midfielder" data-name="azeez falolu" data-aos="fade-up" data-aos-delay="240">
+        <article class="player-card" data-category="professional" data-position="midfielder" data-name="azeez falolu" data-aos="fade-up" data-aos-delay="240">
           <img class="player-card-img" src="assets/players/Azeez Falolu.jpeg" alt="Azeez Falolu" loading="lazy" />
           <div class="player-card-overlay"></div>
           <div class="player-card-badge"><span class="badge badge-gold">MID</span></div>
@@ -205,7 +218,7 @@
         </article>
 
         <!-- FWD 2 — Marcelino Abrahams -->
-        <article class="player-card" data-position="forward" data-name="marcelino abrahams" data-aos="fade-up" data-aos-delay="80">
+        <article class="player-card" data-category="professional" data-position="forward" data-name="marcelino abrahams" data-aos="fade-up" data-aos-delay="80">
           <img class="player-card-img" src="assets/players/Marcelino Abrahams.jpeg" alt="Marcelino Abrahams" loading="lazy" />
           <div class="player-card-overlay"></div>
           <div class="player-card-badge"><span class="badge" style="background:var(--navy-600);color:#fff;">FWD</span></div>
@@ -216,7 +229,7 @@
         </article>
 
         <!-- FWD 3 — Laudry Mukaba -->
-        <article class="player-card" data-position="forward" data-name="laudry mukaba" data-aos="fade-up" data-aos-delay="160">
+        <article class="player-card" data-category="professional" data-position="forward" data-name="laudry mukaba" data-aos="fade-up" data-aos-delay="160">
           <img class="player-card-img" src="assets/players/Laudry Mukaba .jpeg" alt="Laudry Mukaba" loading="lazy" />
           <div class="player-card-overlay"></div>
           <div class="player-card-badge"><span class="badge" style="background:var(--navy-600);color:#fff;">FWD</span></div>
@@ -227,7 +240,7 @@
         </article>
 
         <!-- FWD 4 — Rufus Pukkie Sackie Jr -->
-        <article class="player-card" data-position="forward" data-name="rufus pukkie sackie jr" data-aos="fade-up" data-aos-delay="0">
+        <article class="player-card" data-category="professional" data-position="forward" data-name="rufus pukkie sackie jr" data-aos="fade-up" data-aos-delay="0">
           <img class="player-card-img" src="assets/players/Rufus Sackie Jr.jpeg" alt="Rufus Pukkie Sackie Jr" loading="lazy" />
           <div class="player-card-overlay"></div>
           <div class="player-card-badge"><span class="badge" style="background:var(--navy-600);color:#fff;">FWD</span></div>
@@ -238,6 +251,12 @@
         </article>
 
       </div><!-- /players-grid -->
+
+      <div class="players-empty hidden" id="players-empty">
+        <i class="fa-solid fa-seedling"></i>
+        <h3>Coming Soon</h3>
+        <p>Our development players will be announced here soon.</p>
+      </div>
 
       <div class="load-more-wrap">
         <button id="load-more-btn" class="btn btn-outline btn-lg hidden">
