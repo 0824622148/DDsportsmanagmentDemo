@@ -25,6 +25,24 @@
 
   "extra": [
     {
+      "timestamp": "2026-10-15T09:00:00",
+      "title": "Welcome Molemo Seemela to D.D Sports Management Agency",
+      "category": "Announcement",
+      "date": "10/15/2026",
+      "excerpt": "Molemo Seemela, a promising 20-year-old attacking midfielder with Lamontville Golden Arrows’ Diski side, has joined the D.D Sports Management family.",
+      "imageUrl": "local:assets/news-molemo-seemela-welcome.jpeg",
+      "body": [
+        "D.D Sports Management Agency is proud to announce that Molemo Seemela has joined our growing family of elite football talent.",
+        "Molemo, affectionately known as Mshishi or Carter, is a highly promising attacking midfielder currently featuring for Lamontville Golden Arrows’ Diski side. Born on 2 June 2006 in Durban, the agile and creative 20-year-old has already shown clear potential at youth level.",
+        "He made his debut for Golden Arrows in a 2-1 victory over TS Galaxy on 22 November 2025 and has gone on to accumulate 20 Diski appearances with 2 goals (17 starts and 3 substitute appearances in the 2025/26 DSTV Diski Challenge). Club posts have highlighted his instrumental contributions in key matches, including strong performances against sides such as TS Galaxy and Orlando Pirates reserves.",
+        "At D.D Sports Management Agency we specialise in developing and advancing careers of talented players, creating structured pathways for South African talent both locally and on the international stage. We are excited to partner with Molemo as he continues his development and takes the next steps in his professional journey.",
+        "Welcome to the family, Molemo — we look forward to supporting you every step of the way."
+      ],
+      "gallery": [
+        "assets/news-molemo-seemela-training.jpeg"
+      ]
+    },
+    {
       "timestamp": "2026-10-11T09:00:00",
       "title": "Successful Youth Trial at Azaadville – Players Selected for GDL & DDC Pathways",
       "category": "Scouting",
