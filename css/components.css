@@ -2102,6 +2102,9 @@ img[src*="news-laudry-mukaba-first-goal"],
 img[src*="news-mpho-maila-welcome"],
 .news-card-img img[src*="news-tshidiso-motingoe-scout"],
 .news-featured-img img[src*="news-tshidiso-motingoe-scout"],
-img[src*="news-tshidiso-motingoe-scout"] {
+img[src*="news-tshidiso-motingoe-scout"],
+.news-card-img img[src*="news-sipho-masola-senior-agent"],
+.news-featured-img img[src*="news-sipho-masola-senior-agent"],
+img[src*="news-sipho-masola-senior-agent"] {
   object-position: center top;
 }

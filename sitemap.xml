@@ -3,7 +3,7 @@
 
   <url>
     <loc>https://ddsportsmanagement.co.za/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -17,7 +17,7 @@
 
   <url>
     <loc>https://ddsportsmanagement.co.za/staff.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,7 +38,7 @@
 
   <url>
     <loc>https://ddsportsmanagement.co.za/news.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -47,6 +47,13 @@
     <loc>https://ddsportsmanagement.co.za/contact.html</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://ddsportsmanagement.co.za/news-introducing-sipho-masola-our-new-senior-agent.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
 
