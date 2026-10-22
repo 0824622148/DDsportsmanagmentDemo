@@ -2105,6 +2105,9 @@ img[src*="news-mpho-maila-welcome"],
 img[src*="news-tshidiso-motingoe-scout"],
 .news-card-img img[src*="news-sipho-masola-senior-agent"],
 .news-featured-img img[src*="news-sipho-masola-senior-agent"],
-img[src*="news-sipho-masola-senior-agent"] {
+img[src*="news-sipho-masola-senior-agent"],
+.news-card-img img[src*="news-loyiso-makwakwa-welcome"],
+.news-featured-img img[src*="news-loyiso-makwakwa-welcome"],
+img[src*="news-loyiso-makwakwa-welcome"] {
   object-position: center top;
 }

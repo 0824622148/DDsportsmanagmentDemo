@@ -25,6 +25,34 @@
 
   "extra": [
     {
+      "timestamp": "2026-10-22T10:00:00",
+      "title": "Welcome to the D.D Sports Management Family, Loyiso Vutlhari Makwakwa!",
+      "category": "Announcement",
+      "date": "10/22/2026",
+      "excerpt": "D.D Sports Management Agency officially welcomes Loyiso Vutlhari Makwakwa, attacking midfielder with Marumo Gallants in the DStv Diski Challenge.",
+      "imageUrl": "local:assets/news-loyiso-makwakwa-welcome.jpeg",
+      "body": [
+        "It is with great pride that D.D Sports Management Agency officially welcomes Loyiso Vutlhari Makwakwa to our growing family of elite African talent.",
+        "Loyiso represents the values we hold dear — discipline, character, quiet determination, and a relentless work ethic. We are excited to partner with him on the next chapter of his journey and to provide the professional support, guidance, and opportunities that will help him reach his full potential.",
+        "Loyiso, you are now part of a family that believes in you.",
+        "Welcome home."
+      ]
+    },
+    {
+      "timestamp": "2026-10-22T09:00:00",
+      "title": "Welcome to the D.D Sports Management Family, Wasiri Williams!",
+      "category": "Announcement",
+      "date": "10/22/2026",
+      "excerpt": "D.D Sports Management Agency welcomes Ola Wasiri Williams, a powerful and composed centre-back with Galway United in the League of Ireland Premier Division.",
+      "imageUrl": "local:assets/news-wasiri-williams-welcome.jpeg",
+      "body": [
+        "D.D Sports Management Agency is delighted to officially welcome Ola Wasiri Williams to our roster.",
+        "A powerful and composed centre-back with a remarkable personal and professional journey, Wasiri embodies resilience, growth, and the true spirit of professional football. From overcoming significant challenges in his youth to forging a career across multiple countries, his story is one of determination and self-belief — values that align perfectly with the D.D Sports Management philosophy.",
+        "Wasiri, we are proud to have you with us and excited to support the next stage of your career.",
+        "Welcome to the family."
+      ]
+    },
+    {
       "timestamp": "2026-10-19T12:00:00",
       "title": "Introducing Sipho Masola – Our New Senior Agent",
       "category": "Announcement",
