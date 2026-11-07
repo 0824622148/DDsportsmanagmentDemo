@@ -1899,6 +1899,9 @@
 
 .founder-cred i { color: var(--gold-500); }
 
+.founder-email { transition: color 0.2s, border-color 0.2s; }
+.founder-email:hover { color: var(--gold-400); border-color: var(--gold-500); }
+
 .founder-bio {
   font-size: var(--text-base);
   color: var(--gray-400);
