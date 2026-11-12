@@ -2111,6 +2111,9 @@ img[src*="news-tshidiso-motingoe-scout"],
 img[src*="news-sipho-masola-senior-agent"],
 .news-card-img img[src*="news-loyiso-makwakwa-welcome"],
 .news-featured-img img[src*="news-loyiso-makwakwa-welcome"],
-img[src*="news-loyiso-makwakwa-welcome"] {
+img[src*="news-loyiso-makwakwa-welcome"],
+.news-card-img img[src*="news-donte-dorlly-best-agent"],
+.news-featured-img img[src*="news-donte-dorlly-best-agent"],
+img[src*="news-donte-dorlly-best-agent"] {
   object-position: center top;
 }
